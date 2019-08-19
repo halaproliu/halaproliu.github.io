@@ -24,9 +24,9 @@ initGlobalAPI主要是初始化一些全局方法：
 
 使用Object.defineProperty挂载config，config配置文件/src/core/config.js.
 
-> /src/core/instance/index.js
 
 ```js
+// /src/core/instance/index.js
 initMixin(Vue)
 stateMixin(Vue)
 eventsMixin(Vue)
