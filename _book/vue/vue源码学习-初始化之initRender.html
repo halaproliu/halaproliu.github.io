@@ -1,0 +1,1002 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>vue源码学习-初始化之initRender · halapro.liu的技术博客</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="halapro.liu">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-donate/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+
+        
+    
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="vue源码学习-initState.html" />
+    
+    
+    <link rel="prev" href="简单解析vue的nextTick异步更新方法.html" />
+    
+
+    
+        <link rel="shortcut icon" href='../source/images/favicon.jpg' type="image/x-icon">
+    
+    
+        <link rel="bookmark" href='../source/images/favicon.jpg' type="image/x-icon">
+    
+    
+        <link rel="apple-touch-icon" href='../source/images/apple-touch-icon.jpg'>
+    
+    
+        
+        <link rel="apple-touch-icon" sizes="120x120" href="../source/images/apple-touch-icon.jpg">
+        
+        <link rel="apple-touch-icon" sizes="180x180" href="../source/images/apple-touch-icon.jpg">
+        
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"Blankj","repo":"glory","type":"star","size":"small","count":true}]};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">PART Ⅰ - HTML</li>
+        
+        
+    
+
+    
+        
+        <li class="header">PART Ⅱ - CSS</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../css/css的水平格式化.html">
+            
+                <a href="../css/css的水平格式化.html">
+            
+                    
+                    css的水平格式化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../css/css的垂直格式化.html">
+            
+                <a href="../css/css的垂直格式化.html">
+            
+                    
+                    css的垂直格式化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../css/伪元素的妙用.html">
+            
+                <a href="../css/伪元素的妙用.html">
+            
+                    
+                    伪元素的妙用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="../css/css权重.html">
+            
+                <a href="../css/css权重.html">
+            
+                    
+                    css权重
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="../css/css实现轮播图.html">
+            
+                <a href="../css/css实现轮播图.html">
+            
+                    
+                    css实现轮播图
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">PART Ⅲ - JavaScript</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../JavaScript/ES6的Symbol类型介绍.html">
+            
+                <a href="../JavaScript/ES6的Symbol类型介绍.html">
+            
+                    
+                    ES6的Symbol类型介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="../JavaScript/let,const和var的区别.html">
+            
+                <a href="../JavaScript/let,const和var的区别.html">
+            
+                    
+                    let,const和var的区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="../JavaScript/简单的依赖注入（控制反转）实现.html">
+            
+                <a href="../JavaScript/简单的依赖注入（控制反转）实现.html">
+            
+                    
+                    简单的依赖注入（控制反转）实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="../JavaScript/pageshow的persisted总为false解决方案.html">
+            
+                <a href="../JavaScript/pageshow的persisted总为false解决方案.html">
+            
+                    
+                    pageshow的persisted总为false解决方案
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="../JavaScript/强制类型转换.html">
+            
+                <a href="../JavaScript/强制类型转换.html">
+            
+                    
+                    强制类型转换
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6" data-path="../JavaScript/setInterval缺点.html">
+            
+                <a href="../JavaScript/setInterval缺点.html">
+            
+                    
+                    setInterval缺点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.7" data-path="../JavaScript/js实现统计网页中字符串出现次数.html">
+            
+                <a href="../JavaScript/js实现统计网页中字符串出现次数.html">
+            
+                    
+                    js实现统计网页中字符串出现次数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.8" data-path="../JavaScript/使用CSS:filter实现类PS操作.html">
+            
+                <a href="../JavaScript/使用CSS:filter实现类PS操作.html">
+            
+                    
+                    使用CSS:filter实现类PS操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.9" data-path="../JavaScript/js实现下载文件.html">
+            
+                <a href="../JavaScript/js实现下载文件.html">
+            
+                    
+                    js实现下载文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.10" data-path="../JavaScript/js作用域你不得不知道的事.html">
+            
+                <a href="../JavaScript/js作用域你不得不知道的事.html">
+            
+                    
+                    js作用域你不得不知道的事
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.11" data-path="../JavaScript/IntersectionObserver实现懒加载.html">
+            
+                <a href="../JavaScript/IntersectionObserver实现懒加载.html">
+            
+                    
+                    IntersectionObserver实现懒加载
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.12" data-path="../JavaScript/MutationObserver用法.html">
+            
+                <a href="../JavaScript/MutationObserver用法.html">
+            
+                    
+                    MutationObserver用法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.13" data-path="../JavaScript/Promise的简单实现.html">
+            
+                <a href="../JavaScript/Promise的简单实现.html">
+            
+                    
+                    Promise的简单实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.14" data-path="../JavaScript/vue-cli下配置webpack的proxy参数.html">
+            
+                <a href="../JavaScript/vue-cli下配置webpack的proxy参数.html">
+            
+                    
+                    vue-cli下配置webpack的proxy参数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.15" data-path="../JavaScript/hashchange事件.html">
+            
+                <a href="../JavaScript/hashchange事件.html">
+            
+                    
+                    hashchange事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.16" data-path="../JavaScript/html5拖放事件API.html">
+            
+                <a href="../JavaScript/html5拖放事件API.html">
+            
+                    
+                    html5拖放事件API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.17" data-path="../JavaScript/JS复杂判断的简单写法.html">
+            
+                <a href="../JavaScript/JS复杂判断的简单写法.html">
+            
+                    
+                    JS复杂判断的简单写法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.18" data-path="../JavaScript/JS实现继承.html">
+            
+                <a href="../JavaScript/JS实现继承.html">
+            
+                    
+                    JS实现继承
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.19" data-path="../JavaScript/移动端固定底部的键盘随系统键盘弹起问题.html">
+            
+                <a href="../JavaScript/移动端固定底部的键盘随系统键盘弹起问题.html">
+            
+                    
+                    移动端固定底部的键盘随系统键盘弹起问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.20" data-path="../JavaScript/div使用contenteditable兼容问题.html">
+            
+                <a href="../JavaScript/div使用contenteditable兼容问题.html">
+            
+                    
+                    div使用contenteditable兼容问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.21" data-path="../JavaScript/requestAnimationFrame实现动画.html">
+            
+                <a href="../JavaScript/requestAnimationFrame实现动画.html">
+            
+                    
+                    requestAnimationFrame实现动画
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.22" data-path="../JavaScript/web前端hash路由的实现机制.html">
+            
+                <a href="../JavaScript/web前端hash路由的实现机制.html">
+            
+                    
+                    web前端hash路由的实现机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.23" data-path="../JavaScript/javascript常用方法.html">
+            
+                <a href="../JavaScript/javascript常用方法.html">
+            
+                    
+                    javascript常用方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">PART Ⅵ - JavaScript设计模式</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../design/设计模式-单例模式.html">
+            
+                <a href="../design/设计模式-单例模式.html">
+            
+                    
+                    设计模式-单例模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="../design/设计模式-职责链模式.html">
+            
+                <a href="../design/设计模式-职责链模式.html">
+            
+                    
+                    设计模式-职责链模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="../design/设计模式-策略模式.html">
+            
+                <a href="../design/设计模式-策略模式.html">
+            
+                    
+                    设计模式-策略模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="../design/设计模式-发布-订阅者模式.html">
+            
+                <a href="../design/设计模式-发布-订阅者模式.html">
+            
+                    
+                    设计模式-发布-订阅者模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="../design/设计模式-命令模式.html">
+            
+                <a href="../design/设计模式-命令模式.html">
+            
+                    
+                    设计模式-命令模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6" data-path="../design/设计模式-享元模式.html">
+            
+                <a href="../design/设计模式-享元模式.html">
+            
+                    
+                    设计模式-享元模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.7" data-path="../design/设计模式-备忘录模式.html">
+            
+                <a href="../design/设计模式-备忘录模式.html">
+            
+                    
+                    设计模式-备忘录模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">PART Ⅴ - Vue源码学习</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="vue源码学习-引入Vue时，Vue做了什么.html">
+            
+                <a href="vue源码学习-引入Vue时，Vue做了什么.html">
+            
+                    
+                    vue源码学习-引入Vue时，Vue做了什么
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="vue源码学习-newVue时发生了什么.html">
+            
+                <a href="vue源码学习-newVue时发生了什么.html">
+            
+                    
+                    vue源码学习-vue源码学习-new Vue时发生了什么
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="vue源码学习-初始化生命周期和事件队列.html">
+            
+                <a href="vue源码学习-初始化生命周期和事件队列.html">
+            
+                    
+                    vue源码学习-vue源码学习-初始化生命周期和事件队列
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4" data-path="vue源码学习-performance性能检测和proxy对象.html">
+            
+                <a href="vue源码学习-performance性能检测和proxy对象.html">
+            
+                    
+                    vue源码学习-performance性能检测和proxy对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.5" data-path="简单解析vue的nextTick异步更新方法.html">
+            
+                <a href="简单解析vue的nextTick异步更新方法.html">
+            
+                    
+                    vue源码学习-简单解析vue的nextTick异步更新方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="6.6" data-path="vue源码学习-初始化之initRender.html">
+            
+                <a href="vue源码学习-初始化之initRender.html">
+            
+                    
+                    vue源码学习-初始化之initRender
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.7" data-path="vue源码学习-initState.html">
+            
+                <a href="vue源码学习-initState.html">
+            
+                    
+                    vue源码学习-initState
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">PART Ⅵ - Webpack源码学习</li>
+        
+        
+    
+
+    
+        
+        <li class="header">PART Ⅶ - babel源码学习</li>
+        
+        
+    
+
+    
+        
+        <li class="header">PART Ⅶ - SHELL脚本学习</li>
+        
+        
+    
+        <li class="chapter " data-level="9.1" data-path="../shell/shell脚本设置git代理.html">
+            
+                <a href="../shell/shell脚本设置git代理.html">
+            
+                    
+                    shell脚本设置git代理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2" data-path="../shell/使用shell脚本获取当前git分支并提交远程分支.html">
+            
+                <a href="../shell/使用shell脚本获取当前git分支并提交远程分支.html">
+            
+                    
+                    使用shell脚本获取当前git分支并提交远程分支
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.3" data-path="../shell/使用shell脚本连接远程跳板机.html">
+            
+                <a href="../shell/使用shell脚本连接远程跳板机.html">
+            
+                    
+                    使用shell脚本连接远程跳板机
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >vue源码学习-初始化之initRender</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#vue&#x6E90;&#x7801;&#x5B66;&#x4E60;-&#x521D;&#x59CB;&#x5316;&#x4E4B;initrender"><b></b>vue&#x6E90;&#x7801;&#x5B66;&#x4E60;-&#x521D;&#x59CB;&#x5316;&#x4E4B;initRender</a></li></ul></div><a href="#vue&#x6E90;&#x7801;&#x5B66;&#x4E60;-&#x521D;&#x59CB;&#x5316;&#x4E4B;initrender" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="vue&#x6E90;&#x7801;&#x5B66;&#x4E60;-&#x521D;&#x59CB;&#x5316;&#x4E4B;initrender"><a name="vue&#x6E90;&#x7801;&#x5B66;&#x4E60;-&#x521D;&#x59CB;&#x5316;&#x4E4B;initrender" class="anchor-navigation-ex-anchor" href="#vue&#x6E90;&#x7801;&#x5B66;&#x4E60;-&#x521D;&#x59CB;&#x5316;&#x4E4B;initrender"><i class="fa fa-link" aria-hidden="true"></i></a><a name="vue&#x6E90;&#x7801;&#x5B66;&#x4E60;-&#x521D;&#x59CB;&#x5316;&#x4E4B;initrender" class="plugin-anchor" href="#vue&#x6E90;&#x7801;&#x5B66;&#x4E60;-&#x521D;&#x59CB;&#x5316;&#x4E4B;initrender"><i class="fa fa-link" aria-hidden="true"></i></a>vue&#x6E90;&#x7801;&#x5B66;&#x4E60;-&#x521D;&#x59CB;&#x5316;&#x4E4B;initRender</h1>
+<p>&#x63A5;&#x4E0B;&#x6765;&#x6211;&#x4EEC;&#x7EE7;&#x7EED;&#x6765;&#x5B66;&#x4E60;&#x521D;&#x59CB;&#x5316;&#x8C03;&#x7528;&#x7684;&#x521D;&#x59CB;&#x5316;&#x65F6;&#x8C03;&#x7528;&#x7684;initRender&#x51FD;&#x6570;</p>
+<h4 id="&#x83B7;&#x53D6;&#x7236;&#x8282;&#x70B9;&#x548C;&#x6267;&#x884C;&#x73AF;&#x5883;"><a name="&#x83B7;&#x53D6;&#x7236;&#x8282;&#x70B9;&#x548C;&#x6267;&#x884C;&#x73AF;&#x5883;" class="anchor-navigation-ex-anchor" href="#&#x83B7;&#x53D6;&#x7236;&#x8282;&#x70B9;&#x548C;&#x6267;&#x884C;&#x73AF;&#x5883;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x83B7;&#x53D6;&#x7236;&#x8282;&#x70B9;&#x548C;&#x6267;&#x884C;&#x73AF;&#x5883;" class="plugin-anchor" href="#&#x83B7;&#x53D6;&#x7236;&#x8282;&#x70B9;&#x548C;&#x6267;&#x884C;&#x73AF;&#x5883;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x83B7;&#x53D6;&#x7236;&#x8282;&#x70B9;&#x548C;&#x6267;&#x884C;&#x73AF;&#x5883;</h4>
+<pre><code class="lang-js">vm._vnode = <span class="hljs-literal">null</span> <span class="hljs-comment">// the root of the child tree</span>
+vm._staticTrees = <span class="hljs-literal">null</span> <span class="hljs-comment">// v-once cached trees</span>
+<span class="hljs-keyword">const</span> options = vm.$options
+<span class="hljs-keyword">const</span> parentVnode = vm.$vnode = options._parentVnode <span class="hljs-comment">// the placeholder node in parent tree</span>
+<span class="hljs-keyword">const</span> renderContext = parentVnode &amp;&amp; parentVnode.context
+</code></pre>
+<p>&#x5F00;&#x5934;&#x7684;&#x90E8;&#x5206;&#xFF0C;&#x9996;&#x5148;&#x83B7;&#x53D6;&#x5230;&#x4E86;&#x7236;&#x7EC4;&#x4EF6;&#x7684;vnode&#x8282;&#x70B9;&#x548C;&#x6267;&#x884C;&#x73AF;&#x8282;&#x3002;</p>
+<h4 id="&#x7EC4;&#x4EF6;&#x4E4B;slot&#x63D2;&#x69FD;"><a name="&#x7EC4;&#x4EF6;&#x4E4B;slot&#x63D2;&#x69FD;" class="anchor-navigation-ex-anchor" href="#&#x7EC4;&#x4EF6;&#x4E4B;slot&#x63D2;&#x69FD;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x7EC4;&#x4EF6;&#x4E4B;slot&#x63D2;&#x69FD;" class="plugin-anchor" href="#&#x7EC4;&#x4EF6;&#x4E4B;slot&#x63D2;&#x69FD;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7EC4;&#x4EF6;&#x4E4B;slot&#x63D2;&#x69FD;</h4>
+<pre><code class="lang-js">vm.$slots = resolveSlots(options._renderChildren, renderContext)
+vm.$scopedSlots = emptyObject
+</code></pre>
+<p>&#x63A5;&#x7740;&#x8FDB;&#x884C;&#x7EC4;&#x4EF6;&#x7684;slots&#xFF08;&#x63D2;&#x69FD;&#xFF09;&#x7684;&#x521D;&#x59CB;&#x5316;.&#x5305;&#x542B;&#x533F;&#x540D;slot&#xFF0C;&#x5177;&#x540D;slot&#xFF0C;&#x533A;&#x522B;&#x5728;&#x4E8E;&#xFF0C;&#x5728;&#x7EC4;&#x4EF6;&#x5B9A;&#x4E49;&#x4E2D;slot&#x662F;&#x5426;&#x5305;&#x542B;name&#x5C5E;&#x6027;&#x3002;</p>
+<pre><code class="lang-html">// a.vue
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;container&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">header</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">slot</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;header&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">slot</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">header</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">main</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">slot</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">slot</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">main</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">footer</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">slot</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;footer&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">slot</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">footer</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+<pre><code class="lang-html">// &#x533F;&#x540D;&#x63D2;&#x69FD;&#x7684;&#x4F7F;&#x7528;&#x65B9;&#x5F0F;
+<span class="hljs-tag">&lt;<span class="hljs-name">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>main is here<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+</code></pre>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">&quot;header&quot;</span>&gt;</span>header is here<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">&quot;footer&quot;</span>&gt;</span>footer is here<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+</code></pre>
+<p>&#x4EE5;&#x4E0A;&#x65B9;&#x6CD5;&#x4E3A;vue2.5&#x7248;&#x672C;&#x7684;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#xFF0C; &#x5728;2.6.0&#x7684;&#x7248;&#x672C;&#x4E2D;&#xFF0C;&#x5E9F;&#x5F03;&#x4E86;&#x8FD9;&#x79CD;&#x65B9;&#x6CD5;&#xFF0C;&#x6539;&#x4E3A;&#x4F7F;&#x7528;v-slot&#x8FDB;&#x884C;&#x5177;&#x540D;&#x64CD;&#x4F5C;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">v-slot:header</span>&gt;</span>header is here<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">v-slot:footer</span>&gt;</span>footer is here<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+</code></pre>
+<p>&#x5728;slots&#x7684;&#x64CD;&#x4F5C;&#x4E2D;&#xFF0C;vue&#x4E3B;&#x8981;&#x505A;&#x4E86;&#x4EE5;&#x4E0B;&#x51E0;&#x70B9;&#x64CD;&#x4F5C;&#xFF1A;</p>
+<ul>
+<li>&#x82E5;&#x7EC4;&#x4EF6;children&#x5B50;&#x8282;&#x70B9;&#x4E3A;&#x7A7A;&#xFF0C;&#x5219;&#x7EC4;&#x4EF6;&#x4E2D;this.$slots&#x5BF9;&#x8C61;&#x4E3A;{}&#x7A7A;&#x5BF9;&#x8C61;</li>
+<li>&#x82E5;&#x7EC4;&#x4EF6;&#x5B50;&#x8282;&#x70B9;&#x5B58;&#x5728;&#xFF0C;&#x5219;&#x5148;&#x79FB;&#x9664;slot&#x5C5E;&#x6027;&#xFF0C;&#x63A5;&#x7740;&#x533F;&#x540D;slot&#x8BBE;&#x7F6E;&#x4E00;&#x4E2A;&#x9ED8;&#x8BA4;default&#x4F5C;&#x4E3A;key&#x503C;&#xFF0C;&#x5B58;&#x50A8;&#x5230;this.$slots&#x5BF9;&#x8C61;&#x4E2D;&#xFF0C;&#x5177;&#x540D;slot&#x5219;&#x6309;&#x7167;&#x5B9A;&#x4E49;&#x7684;name&#x8FDB;&#x884C;&#x5B58;&#x50A8;</li>
+<li>&#x5F53;&#x5B9A;&#x4E49;slot&#x7684;&#x6807;&#x7B7E;&#x4E3A;template&#x65F6;&#xFF0C;&#x5219;&#x83B7;&#x53D6;&#x5B83;&#x7684;&#x5B50;&#x8282;&#x70B9;&#xFF0C;&#x8FDB;&#x884C;&#x6E32;&#x67D3;&#x3002;</li>
+<li>&#x6700;&#x540E;&#x5220;&#x9664;&#x53EA;&#x5305;&#x542B;&#x7A7A;&#x767D;&#x5B57;&#x7B26;&#xFF08;&#x5373;&#x4E0D;&#x5305;&#x542B;&#x5177;&#x4F53;&#x5185;&#x5BB9;&#x7684;slot&#xFF09;</li>
+</ul>
+<h4 id="&#x7EC4;&#x4EF6;&#x4E4B;createelement&#x65B9;&#x6CD5;"><a name="&#x7EC4;&#x4EF6;&#x4E4B;createelement&#x65B9;&#x6CD5;" class="anchor-navigation-ex-anchor" href="#&#x7EC4;&#x4EF6;&#x4E4B;createelement&#x65B9;&#x6CD5;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x7EC4;&#x4EF6;&#x4E4B;createelement&#x65B9;&#x6CD5;" class="plugin-anchor" href="#&#x7EC4;&#x4EF6;&#x4E4B;createelement&#x65B9;&#x6CD5;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7EC4;&#x4EF6;&#x4E4B;$createElement&#x65B9;&#x6CD5;</h4>
+<pre><code class="lang-js">vm._c = (a, b, c, d) =&gt; createElement(vm, a, b, c, d, <span class="hljs-literal">false</span>)
+vm.$createElement = (a, b, c, d) =&gt; createElement(vm, a, b, c, d, <span class="hljs-literal">true</span>)
+</code></pre>
+<p>$createElement&#x65B9;&#x6CD5;&#x7684;&#x4E3B;&#x8981;&#x4F5C;&#x7528;&#x662F;&#x89E3;&#x6790;&#x7528;&#x6237;&#x5199;&#x7684;&#x6A21;&#x677F;html&#xFF0C;&#x4ECE;&#x800C;&#x6210;&#x4E3A;&#x6D4F;&#x89C8;&#x5668;&#x53EF;&#x4EE5;&#x8BC6;&#x522B;&#x7684;&#x683C;&#x5F0F;&#x3002;</p>
+<p>&#x4EE5;&#x4E0A;&#x4E24;&#x4E2A;&#x65B9;&#x6CD5;&#x7684;&#x533A;&#x522B;&#x5728;&#x4E8E;&#xFF0C;&#x5F53;&#x5B50;&#x8282;&#x70B9;&#x53EA;&#x662F;functional&#x7EC4;&#x4EF6;&#x65F6;&#xFF0C;&#x8FD4;&#x56DE;&#x7684;&#x662F;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#x683C;&#x5F0F;&#x7684;&#x8282;&#x70B9;&#x5185;&#x5BB9;&#xFF0C;&#x540C;&#x65F6;&#x5185;&#x90E8;&#x5DF2;&#x7ECF;&#x505A;&#x4E86;&#x89E3;&#x6790;&#xFF0C;&#x6240;&#x4EE5;&#x53EA;&#x9700;&#x8981;&#x7B80;&#x5355;&#x7684;&#x8FDB;&#x884C;&#x6570;&#x7EC4;&#x5408;&#x5E76;&#xFF0C;&#x800C;&#x5F53;&#x5B50;&#x8282;&#x70B9;&#x662F;<template>,<slot>,v-for&#x7B49;&#x590D;&#x6742;&#x8282;&#x70B9;&#x65F6;&#xFF0C;&#x9700;&#x8981;&#x6DF1;&#x5165;&#x904D;&#x5386;&#x6765;&#x89E3;&#x6790;&#x3002;</slot></template></p>
+<h4 id="&#x7EC4;&#x4EF6;&#x4E4B;attrs&#x548C;listeners"><a name="&#x7EC4;&#x4EF6;&#x4E4B;attrs&#x548C;listeners" class="anchor-navigation-ex-anchor" href="#&#x7EC4;&#x4EF6;&#x4E4B;attrs&#x548C;listeners"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x7EC4;&#x4EF6;&#x4E4B;attrs&#x548C;listeners" class="plugin-anchor" href="#&#x7EC4;&#x4EF6;&#x4E4B;attrs&#x548C;listeners"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7EC4;&#x4EF6;&#x4E4B;$attrs&#x548C;$listeners</h4>
+<pre><code class="lang-js">defineReactive(vm, <span class="hljs-string">&apos;$attrs&apos;</span>, parentData &amp;&amp; parentData.attrs || emptyObject, <span class="hljs-literal">null</span>, <span class="hljs-literal">true</span>)
+defineReactive(vm, <span class="hljs-string">&apos;$listeners&apos;</span>, options._parentListeners || emptyObject, <span class="hljs-literal">null</span>, <span class="hljs-literal">true</span>)
+</code></pre>
+<p>$attrs&#x548C;$listeners&#x662F;vue&#x66B4;&#x9732;&#x51FA;&#x6765;&#xFF0C;&#x7528;&#x4E8E;&#x7F16;&#x5199;&#x9AD8;&#x9636;&#x7EC4;&#x4EF6;&#x7684;&#x4E24;&#x4E2A;&#x5C5E;&#x6027;&#xFF0C;$attrs&#x7528;&#x4E8E;&#x5728;&#x7EC4;&#x4EF6;&#x4E2D;&#x83B7;&#x53D6;&#x6240;&#x6709;&#x672A;&#x5728;props&#x4E2D;&#x5B9A;&#x4E49;&#x7684;&#x5143;&#x7D20;&#x5C5E;&#x6027;&#x3002;</p>
+<ul>
+<li>$attrs</li>
+</ul>
+<p>&#x5305;&#x542B;&#x4E86;&#x7236;&#x4F5C;&#x7528;&#x57DF;&#x4E2D;&#x4E0D;&#x4F5C;&#x4E3A; prop &#x88AB;&#x8BC6;&#x522B; (&#x4E14;&#x83B7;&#x53D6;) &#x7684;&#x7279;&#x6027;&#x7ED1;&#x5B9A; (class &#x548C; style &#x9664;&#x5916;)&#x3002;&#x5F53;&#x4E00;&#x4E2A;&#x7EC4;&#x4EF6;&#x6CA1;&#x6709;&#x58F0;&#x660E;&#x4EFB;&#x4F55; prop &#x65F6;&#xFF0C;&#x8FD9;&#x91CC;&#x4F1A;&#x5305;&#x542B;&#x6240;&#x6709;&#x7236;&#x4F5C;&#x7528;&#x57DF;&#x7684;&#x7ED1;&#x5B9A; (class &#x548C; style &#x9664;&#x5916;)&#xFF0C;&#x5E76;&#x4E14;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; v-bind=&quot;$attrs&quot; &#x4F20;&#x5165;&#x5185;&#x90E8;&#x7EC4;&#x4EF6;&#x2014;&#x2014;&#x5728;&#x521B;&#x5EFA;&#x9AD8;&#x7EA7;&#x522B;&#x7684;&#x7EC4;&#x4EF6;&#x65F6;&#x975E;&#x5E38;&#x6709;&#x7528;&#x3002;</p>
+<ul>
+<li>$listeners</li>
+</ul>
+<p>&#x5305;&#x542B;&#x4E86;&#x7236;&#x4F5C;&#x7528;&#x57DF;&#x4E2D;&#x7684; (&#x4E0D;&#x542B; .native &#x4FEE;&#x9970;&#x5668;&#x7684;) v-on &#x4E8B;&#x4EF6;&#x76D1;&#x542C;&#x5668;&#x3002;&#x5B83;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; v-on=&quot;$listeners&quot; &#x4F20;&#x5165;&#x5185;&#x90E8;&#x7EC4;&#x4EF6;&#x2014;&#x2014;&#x5728;&#x521B;&#x5EFA;&#x66F4;&#x9AD8;&#x5C42;&#x6B21;&#x7684;&#x7EC4;&#x4EF6;&#x65F6;&#x975E;&#x5E38;&#x6709;&#x7528;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="简单解析vue的nextTick异步更新方法.html" class="navigation navigation-prev " aria-label="Previous page: vue源码学习-简单解析vue的nextTick异步更新方法">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="vue源码学习-initState.html" class="navigation navigation-next " aria-label="Next page: vue源码学习-initState">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"vue源码学习-初始化之initRender","level":"6.6","depth":1,"next":{"title":"vue源码学习-initState","level":"6.7","depth":1,"path":"vue/vue源码学习-initState.md","ref":"./vue/vue源码学习-initState.md","articles":[]},"previous":{"title":"vue源码学习-简单解析vue的nextTick异步更新方法","level":"6.5","depth":1,"path":"vue/简单解析vue的nextTick异步更新方法.md","ref":"./vue/简单解析vue的nextTick异步更新方法.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters-small","anchors","github","github-buttons","donate","sharing-plus","anchor-navigation-ex","favicon"],"styles":{"website":"./styles/website.css"},"pluginsConfig":{"github":{"url":"https://github.com/halaproliu"},"splitter":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"donate":{"alipay":"./source/images/alipay.png","alipayText":" ","button":"赞赏","title":"","wechat":"","wechatText":"微信打赏"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"favicon":{"shortcut":"./source/images/favicon.jpg","bookmark":"./source/images/favicon.jpg","appleTouch":"./source/images/apple-touch-icon.jpg","appleTouchMore":{"120x120":"./source/images/apple-touch-icon.jpg","180x180":"./source/images/apple-touch-icon.jpg"}},"github-buttons":{"buttons":[{"user":"Blankj","repo":"glory","type":"star","size":"small","count":true}]},"expandable-chapters-small":{},"sharing":{"qq":false,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"halapro.liu","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"halapro.liu的技术博客","language":"zh-hans","gitbook":"3.2.3","description":"前端技术记录"},"file":{"path":"vue/vue源码学习-初始化之initRender.md","mtime":"2019-09-05T09:16:04.061Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-05T09:39:26.943Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-donate/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -1,0 +1,1084 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>设计模式-策略模式 · halapro.liu的技术博客</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="halapro.liu">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-donate/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+
+        
+    
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="设计模式-发布-订阅者模式.html" />
+    
+    
+    <link rel="prev" href="设计模式-职责链模式.html" />
+    
+
+    
+        <link rel="shortcut icon" href='../source/images/favicon.jpg' type="image/x-icon">
+    
+    
+        <link rel="bookmark" href='../source/images/favicon.jpg' type="image/x-icon">
+    
+    
+        <link rel="apple-touch-icon" href='../source/images/apple-touch-icon.jpg'>
+    
+    
+        
+        <link rel="apple-touch-icon" sizes="120x120" href="../source/images/apple-touch-icon.jpg">
+        
+        <link rel="apple-touch-icon" sizes="180x180" href="../source/images/apple-touch-icon.jpg">
+        
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"Blankj","repo":"glory","type":"star","size":"small","count":true}]};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">PART Ⅰ - HTML</li>
+        
+        
+    
+
+    
+        
+        <li class="header">PART Ⅱ - CSS</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../css/css的水平格式化.html">
+            
+                <a href="../css/css的水平格式化.html">
+            
+                    
+                    css的水平格式化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../css/css的垂直格式化.html">
+            
+                <a href="../css/css的垂直格式化.html">
+            
+                    
+                    css的垂直格式化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../css/伪元素的妙用.html">
+            
+                <a href="../css/伪元素的妙用.html">
+            
+                    
+                    伪元素的妙用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="../css/css权重.html">
+            
+                <a href="../css/css权重.html">
+            
+                    
+                    css权重
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="../css/css实现轮播图.html">
+            
+                <a href="../css/css实现轮播图.html">
+            
+                    
+                    css实现轮播图
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">PART Ⅲ - JavaScript</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../JavaScript/ES6的Symbol类型介绍.html">
+            
+                <a href="../JavaScript/ES6的Symbol类型介绍.html">
+            
+                    
+                    ES6的Symbol类型介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="../JavaScript/let,const和var的区别.html">
+            
+                <a href="../JavaScript/let,const和var的区别.html">
+            
+                    
+                    let,const和var的区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="../JavaScript/简单的依赖注入（控制反转）实现.html">
+            
+                <a href="../JavaScript/简单的依赖注入（控制反转）实现.html">
+            
+                    
+                    简单的依赖注入（控制反转）实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="../JavaScript/pageshow的persisted总为false解决方案.html">
+            
+                <a href="../JavaScript/pageshow的persisted总为false解决方案.html">
+            
+                    
+                    pageshow的persisted总为false解决方案
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="../JavaScript/强制类型转换.html">
+            
+                <a href="../JavaScript/强制类型转换.html">
+            
+                    
+                    强制类型转换
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6" data-path="../JavaScript/setInterval缺点.html">
+            
+                <a href="../JavaScript/setInterval缺点.html">
+            
+                    
+                    setInterval缺点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.7" data-path="../JavaScript/js实现统计网页中字符串出现次数.html">
+            
+                <a href="../JavaScript/js实现统计网页中字符串出现次数.html">
+            
+                    
+                    js实现统计网页中字符串出现次数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.8" data-path="../JavaScript/使用CSS:filter实现类PS操作.html">
+            
+                <a href="../JavaScript/使用CSS:filter实现类PS操作.html">
+            
+                    
+                    使用CSS:filter实现类PS操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.9" data-path="../JavaScript/js实现下载文件.html">
+            
+                <a href="../JavaScript/js实现下载文件.html">
+            
+                    
+                    js实现下载文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.10" data-path="../JavaScript/js作用域你不得不知道的事.html">
+            
+                <a href="../JavaScript/js作用域你不得不知道的事.html">
+            
+                    
+                    js作用域你不得不知道的事
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.11" data-path="../JavaScript/IntersectionObserver实现懒加载.html">
+            
+                <a href="../JavaScript/IntersectionObserver实现懒加载.html">
+            
+                    
+                    IntersectionObserver实现懒加载
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.12" data-path="../JavaScript/MutationObserver用法.html">
+            
+                <a href="../JavaScript/MutationObserver用法.html">
+            
+                    
+                    MutationObserver用法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.13" data-path="../JavaScript/Promise的简单实现.html">
+            
+                <a href="../JavaScript/Promise的简单实现.html">
+            
+                    
+                    Promise的简单实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.14" data-path="../JavaScript/vue-cli下配置webpack的proxy参数.html">
+            
+                <a href="../JavaScript/vue-cli下配置webpack的proxy参数.html">
+            
+                    
+                    vue-cli下配置webpack的proxy参数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.15" data-path="../JavaScript/hashchange事件.html">
+            
+                <a href="../JavaScript/hashchange事件.html">
+            
+                    
+                    hashchange事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.16" data-path="../JavaScript/html5拖放事件API.html">
+            
+                <a href="../JavaScript/html5拖放事件API.html">
+            
+                    
+                    html5拖放事件API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.17" data-path="../JavaScript/JS复杂判断的简单写法.html">
+            
+                <a href="../JavaScript/JS复杂判断的简单写法.html">
+            
+                    
+                    JS复杂判断的简单写法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.18" data-path="../JavaScript/JS实现继承.html">
+            
+                <a href="../JavaScript/JS实现继承.html">
+            
+                    
+                    JS实现继承
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.19" data-path="../JavaScript/移动端固定底部的键盘随系统键盘弹起问题.html">
+            
+                <a href="../JavaScript/移动端固定底部的键盘随系统键盘弹起问题.html">
+            
+                    
+                    移动端固定底部的键盘随系统键盘弹起问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.20" data-path="../JavaScript/div使用contenteditable兼容问题.html">
+            
+                <a href="../JavaScript/div使用contenteditable兼容问题.html">
+            
+                    
+                    div使用contenteditable兼容问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.21" data-path="../JavaScript/requestAnimationFrame实现动画.html">
+            
+                <a href="../JavaScript/requestAnimationFrame实现动画.html">
+            
+                    
+                    requestAnimationFrame实现动画
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.22" data-path="../JavaScript/web前端hash路由的实现机制.html">
+            
+                <a href="../JavaScript/web前端hash路由的实现机制.html">
+            
+                    
+                    web前端hash路由的实现机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.23" data-path="../JavaScript/javascript常用方法.html">
+            
+                <a href="../JavaScript/javascript常用方法.html">
+            
+                    
+                    javascript常用方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">PART Ⅵ - JavaScript设计模式</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="设计模式-单例模式.html">
+            
+                <a href="设计模式-单例模式.html">
+            
+                    
+                    设计模式-单例模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="设计模式-职责链模式.html">
+            
+                <a href="设计模式-职责链模式.html">
+            
+                    
+                    设计模式-职责链模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="5.3" data-path="设计模式-策略模式.html">
+            
+                <a href="设计模式-策略模式.html">
+            
+                    
+                    设计模式-策略模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="设计模式-发布-订阅者模式.html">
+            
+                <a href="设计模式-发布-订阅者模式.html">
+            
+                    
+                    设计模式-发布-订阅者模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="设计模式-命令模式.html">
+            
+                <a href="设计模式-命令模式.html">
+            
+                    
+                    设计模式-命令模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6" data-path="设计模式-享元模式.html">
+            
+                <a href="设计模式-享元模式.html">
+            
+                    
+                    设计模式-享元模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.7" data-path="设计模式-备忘录模式.html">
+            
+                <a href="设计模式-备忘录模式.html">
+            
+                    
+                    设计模式-备忘录模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">PART Ⅴ - Vue源码学习</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../vue/vue源码学习-引入Vue时，Vue做了什么.html">
+            
+                <a href="../vue/vue源码学习-引入Vue时，Vue做了什么.html">
+            
+                    
+                    vue源码学习-引入Vue时，Vue做了什么
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="../vue/vue源码学习-newVue时发生了什么.html">
+            
+                <a href="../vue/vue源码学习-newVue时发生了什么.html">
+            
+                    
+                    vue源码学习-vue源码学习-new Vue时发生了什么
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="../vue/vue源码学习-初始化生命周期和事件队列.html">
+            
+                <a href="../vue/vue源码学习-初始化生命周期和事件队列.html">
+            
+                    
+                    vue源码学习-vue源码学习-初始化生命周期和事件队列
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4" data-path="../vue/vue源码学习-performance性能检测和proxy对象.html">
+            
+                <a href="../vue/vue源码学习-performance性能检测和proxy对象.html">
+            
+                    
+                    vue源码学习-performance性能检测和proxy对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.5" data-path="../vue/简单解析vue的nextTick异步更新方法.html">
+            
+                <a href="../vue/简单解析vue的nextTick异步更新方法.html">
+            
+                    
+                    vue源码学习-简单解析vue的nextTick异步更新方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.6" data-path="../vue/vue源码学习-初始化之initRender.html">
+            
+                <a href="../vue/vue源码学习-初始化之initRender.html">
+            
+                    
+                    vue源码学习-初始化之initRender
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.7" data-path="../vue/vue源码学习-initState.html">
+            
+                <a href="../vue/vue源码学习-initState.html">
+            
+                    
+                    vue源码学习-initState
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">PART Ⅵ - Webpack源码学习</li>
+        
+        
+    
+
+    
+        
+        <li class="header">PART Ⅶ - babel源码学习</li>
+        
+        
+    
+
+    
+        
+        <li class="header">PART Ⅶ - SHELL脚本学习</li>
+        
+        
+    
+        <li class="chapter " data-level="9.1" data-path="../shell/shell脚本设置git代理.html">
+            
+                <a href="../shell/shell脚本设置git代理.html">
+            
+                    
+                    shell脚本设置git代理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2" data-path="../shell/使用shell脚本获取当前git分支并提交远程分支.html">
+            
+                <a href="../shell/使用shell脚本获取当前git分支并提交远程分支.html">
+            
+                    
+                    使用shell脚本获取当前git分支并提交远程分支
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.3" data-path="../shell/使用shell脚本连接远程跳板机.html">
+            
+                <a href="../shell/使用shell脚本连接远程跳板机.html">
+            
+                    
+                    使用shell脚本连接远程跳板机
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >设计模式-策略模式</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;-&#x7B56;&#x7565;&#x6A21;&#x5F0F;"><b></b>&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;-&#x7B56;&#x7565;&#x6A21;&#x5F0F;</a></li><ul><ul><li><span class="title-icon "></span><a href="#1-&#x6700;&#x521D;&#x7684;&#x4EE3;&#x7801;&#x5B9E;&#x73B0;"><b></b>1. &#x6700;&#x521D;&#x7684;&#x4EE3;&#x7801;&#x5B9E;&#x73B0;</a></li><li><span class="title-icon "></span><a href="#2-&#x4F7F;&#x7528;&#x7EC4;&#x5408;&#x51FD;&#x6570;&#x91CD;&#x6784;&#x4EE3;&#x7801;"><b></b>2. &#x4F7F;&#x7528;&#x7EC4;&#x5408;&#x51FD;&#x6570;&#x91CD;&#x6784;&#x4EE3;&#x7801;</a></li><li><span class="title-icon "></span><a href="#3-&#x4F7F;&#x7528;&#x7B56;&#x7565;&#x6A21;&#x5F0F;&#x8FDB;&#x884C;&#x91CD;&#x6784;"><b></b>3. &#x4F7F;&#x7528;&#x7B56;&#x7565;&#x6A21;&#x5F0F;&#x8FDB;&#x884C;&#x91CD;&#x6784;</a></li><li><span class="title-icon "></span><a href="#4-javascript&#x7684;&#x7B56;&#x7565;&#x6A21;&#x5F0F;"><b></b>4. JavaScript&#x7684;&#x7B56;&#x7565;&#x6A21;&#x5F0F;</a></li><li><span class="title-icon "></span><a href="#5-&#x8868;&#x5355;&#x6821;&#x9A8C;"><b></b>5. &#x8868;&#x5355;&#x6821;&#x9A8C;</a></li></ul></ul></ul></div><a href="#&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;-&#x7B56;&#x7565;&#x6A21;&#x5F0F;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;-&#x7B56;&#x7565;&#x6A21;&#x5F0F;"><a name="&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;-&#x7B56;&#x7565;&#x6A21;&#x5F0F;" class="anchor-navigation-ex-anchor" href="#&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;-&#x7B56;&#x7565;&#x6A21;&#x5F0F;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;-&#x7B56;&#x7565;&#x6A21;&#x5F0F;" class="plugin-anchor" href="#&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;-&#x7B56;&#x7565;&#x6A21;&#x5F0F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;-&#x7B56;&#x7565;&#x6A21;&#x5F0F;</h1>
+<p>&#x7B56;&#x7565;&#x6A21;&#x5F0F;&#x6307;&#x7684;&#x662F;&#x5B9A;&#x4E49;&#x4E00;&#x7CFB;&#x5217;&#x7B97;&#x6CD5;&#xFF0C;&#x5E76;&#x4E14;&#x628A;&#x5B83;&#x4EEC;&#x5C01;&#x88C5;&#x8D77;&#x6765;&#xFF0C;&#x5C06;&#x4E0D;&#x53D8;&#x7684;&#x90E8;&#x5206;&#x548C;&#x53D8;&#x5316;&#x7684;&#x90E8;&#x5206;&#x9694;&#x5F00;&#x662F;&#x6BCF;&#x4E2A;&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;&#x7684;&#x4E3B;&#x9898;&#xFF0C;&#x7B56;&#x7565;&#x6A21;&#x5F0F;&#x4E5F;&#x4E0D;&#x4F8B;&#x5916;&#x3002;&#x7B56;&#x7565;&#x6A21;&#x5F0F;&#x7684;&#x76EE;&#x7684;&#x662F;&#x5C06;&#x7B97;&#x6CD5;&#x548C;&#x4F7F;&#x7528;&#x7B97;&#x6CD5;&#x7684;&#x65B9;&#x5F0F;&#x9694;&#x79BB;&#x5F00;&#x6765;&#x3002;</p>
+<p>&#x4E0B;&#x9762;&#x4EE5;&#x8BA1;&#x7B97;&#x8D2D;&#x4E70;&#x7684;&#x4FC3;&#x9500;&#x8863;&#x670D;&#x4E3A;&#x4F8B;&#x3002;&#x53CC;11&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5404;&#x4E2A;&#x5546;&#x5BB6;&#x90FD;&#x5728;&#x6253;&#x6298;&#x4FC3;&#x9500;&#xFF0C;&#x8863;&#x670D;&#x5206;&#x4E3A;A&#xFF0C;B&#xFF0C;C&#x4E09;&#x7C7B;&#x4EA7;&#x54C1;&#xFF0C;&#x5BF9;&#x5E94;&#x7684;&#x6298;&#x6263;&#x5206;&#x522B;&#x4E3A;9&#x6298;&#xFF0C;8&#x6298;&#xFF0C;7&#x6298;&#x3002;&#x5047;&#x8BBE;&#x8D22;&#x52A1;&#x8981;&#x6C42;&#x6211;&#x4EEC;&#x63D0;&#x4F9B;&#x4E00;&#x6BB5;&#x4EE3;&#x7801;&#xFF0C;&#x6765;&#x65B9;&#x4FBF;&#x6211;&#x4EEC;&#x8BA1;&#x7B97;&#x6700;&#x7EC8;&#x4EF7;&#x683C;&#x3002;</p>
+<h3 id="1-&#x6700;&#x521D;&#x7684;&#x4EE3;&#x7801;&#x5B9E;&#x73B0;"><a name="1-&#x6700;&#x521D;&#x7684;&#x4EE3;&#x7801;&#x5B9E;&#x73B0;" class="anchor-navigation-ex-anchor" href="#1-&#x6700;&#x521D;&#x7684;&#x4EE3;&#x7801;&#x5B9E;&#x73B0;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="1-&#x6700;&#x521D;&#x7684;&#x4EE3;&#x7801;&#x5B9E;&#x73B0;" class="plugin-anchor" href="#1-&#x6700;&#x521D;&#x7684;&#x4EE3;&#x7801;&#x5B9E;&#x73B0;"><i class="fa fa-link" aria-hidden="true"></i></a>1. &#x6700;&#x521D;&#x7684;&#x4EE3;&#x7801;&#x5B9E;&#x73B0;</h3>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> calculatePrice = (type, price) =&gt; {
+  <span class="hljs-keyword">if</span> (type === <span class="hljs-string">&apos;A&apos;</span>) {
+    <span class="hljs-keyword">return</span> price * <span class="hljs-number">0.9</span>
+  }
+  <span class="hljs-keyword">if</span> (type === <span class="hljs-string">&apos;B&apos;</span>) {
+    <span class="hljs-keyword">return</span> price * <span class="hljs-number">0.8</span>
+  }
+  <span class="hljs-keyword">if</span> (type === <span class="hljs-string">&apos;C&apos;</span>) {
+    <span class="hljs-keyword">return</span> price * <span class="hljs-number">0.7</span>
+  }
+}
+
+calculatePrice(<span class="hljs-string">&apos;A&apos;</span>, <span class="hljs-number">300</span>) <span class="hljs-comment">// 270</span>
+calculatePrice(<span class="hljs-string">&apos;C&apos;</span>, <span class="hljs-number">500</span>) <span class="hljs-comment">// 350</span>
+</code></pre>
+<p>&#x53EF;&#x4EE5;&#x53D1;&#x73B0;&#x8FD9;&#x6BB5;&#x4EE3;&#x7801;&#x5F88;&#x7B80;&#x5355;&#xFF0C;&#x4F46;&#x662F;&#x5B58;&#x5728;&#x7740;&#x663E;&#x800C;&#x6613;&#x89C1;&#x7684;&#x7F3A;&#x70B9;&#x3002;&#x51FD;&#x6570;&#x5305;&#x542B;&#x4E86;&#x8BB8;&#x591A;if...else&#x8BED;&#x53E5;&#xFF0C;&#x4E14;&#x9700;&#x8981;&#x7F57;&#x5217;&#x51FA;&#x6240;&#x6709;&#x60C5;&#x51B5;&#x3002;&#x5F53;&#x6211;&#x4EEC;&#x65B0;&#x589E;&#x4E00;&#x4E2A;&#x7C7B;&#x578B;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5C31;&#x9700;&#x8981;&#x6DF1;&#x5165;&#x4EE3;&#x7801;&#x5185;&#x90E8;&#x53BB;&#x4FEE;&#x6539;&#xFF0C;&#x8FD9;&#x662F;&#x8FDD;&#x53CD;&#x5F00;&#x653E;-&#x5C01;&#x95ED;&#x539F;&#x5219;&#x7684;&#x3002;&#x4E14;&#x4EE3;&#x7801;&#x7684;&#x590D;&#x7528;&#x6027;&#x5DEE;&#x3002;</p>
+<h3 id="2-&#x4F7F;&#x7528;&#x7EC4;&#x5408;&#x51FD;&#x6570;&#x91CD;&#x6784;&#x4EE3;&#x7801;"><a name="2-&#x4F7F;&#x7528;&#x7EC4;&#x5408;&#x51FD;&#x6570;&#x91CD;&#x6784;&#x4EE3;&#x7801;" class="anchor-navigation-ex-anchor" href="#2-&#x4F7F;&#x7528;&#x7EC4;&#x5408;&#x51FD;&#x6570;&#x91CD;&#x6784;&#x4EE3;&#x7801;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="2-&#x4F7F;&#x7528;&#x7EC4;&#x5408;&#x51FD;&#x6570;&#x91CD;&#x6784;&#x4EE3;&#x7801;" class="plugin-anchor" href="#2-&#x4F7F;&#x7528;&#x7EC4;&#x5408;&#x51FD;&#x6570;&#x91CD;&#x6784;&#x4EE3;&#x7801;"><i class="fa fa-link" aria-hidden="true"></i></a>2. &#x4F7F;&#x7528;&#x7EC4;&#x5408;&#x51FD;&#x6570;&#x91CD;&#x6784;&#x4EE3;&#x7801;</h3>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> clothesA = (price) =&gt; {
+  <span class="hljs-keyword">return</span> price * <span class="hljs-number">0.9</span>
+}
+
+<span class="hljs-keyword">const</span> clothesB = (price) =&gt; {
+  <span class="hljs-keyword">return</span> price * <span class="hljs-number">0.8</span>
+}
+
+<span class="hljs-keyword">const</span> clothesC = (price) =&gt; {
+  <span class="hljs-keyword">return</span> price * <span class="hljs-number">0.7</span>
+}
+
+<span class="hljs-keyword">const</span> calculatePrice = (type, price) =&gt; {
+  <span class="hljs-keyword">if</span> (type === <span class="hljs-string">&apos;A&apos;</span>) {
+    <span class="hljs-keyword">return</span> clothesA(price)
+  }
+  <span class="hljs-keyword">if</span> (type === <span class="hljs-string">&apos;B&apos;</span>) {
+    <span class="hljs-keyword">return</span> clothesB(price)
+  }
+  <span class="hljs-keyword">if</span> (type === <span class="hljs-string">&apos;C&apos;</span>) {
+    <span class="hljs-keyword">return</span> clothesC(price)
+  }
+}
+</code></pre>
+<p>&#x76EE;&#x524D;&#x7A0B;&#x5E8F;&#x5F97;&#x5230;&#x4E86;&#x4E00;&#x5B9A;&#x7684;&#x6539;&#x5584;&#xFF0C;&#x4F46;&#x662F;&#x6539;&#x5584;&#x5341;&#x5206;&#x6709;&#x9650;&#xFF0C;&#x6211;&#x4EEC;&#x4F9D;&#x7136;&#x6CA1;&#x6709;&#x89E3;&#x51B3;&#x6700;&#x91CD;&#x8981;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x5C31;&#x662F;&#x5F53;&#x7A0B;&#x5E8F;&#x8D8A;&#x6765;&#x8D8A;&#x5E9E;&#x5927;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x7CFB;&#x7EDF;&#x53D8;&#x5316;&#x7F3A;&#x4E4F;&#x5F39;&#x6027;&#x3002;</p>
+<h3 id="3-&#x4F7F;&#x7528;&#x7B56;&#x7565;&#x6A21;&#x5F0F;&#x8FDB;&#x884C;&#x91CD;&#x6784;"><a name="3-&#x4F7F;&#x7528;&#x7B56;&#x7565;&#x6A21;&#x5F0F;&#x8FDB;&#x884C;&#x91CD;&#x6784;" class="anchor-navigation-ex-anchor" href="#3-&#x4F7F;&#x7528;&#x7B56;&#x7565;&#x6A21;&#x5F0F;&#x8FDB;&#x884C;&#x91CD;&#x6784;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="3-&#x4F7F;&#x7528;&#x7B56;&#x7565;&#x6A21;&#x5F0F;&#x8FDB;&#x884C;&#x91CD;&#x6784;" class="plugin-anchor" href="#3-&#x4F7F;&#x7528;&#x7B56;&#x7565;&#x6A21;&#x5F0F;&#x8FDB;&#x884C;&#x91CD;&#x6784;"><i class="fa fa-link" aria-hidden="true"></i></a>3. &#x4F7F;&#x7528;&#x7B56;&#x7565;&#x6A21;&#x5F0F;&#x8FDB;&#x884C;&#x91CD;&#x6784;</h3>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">clothesA</span> (<span class="hljs-params"></span>) </span>{}
+clothesA.prototype.calculate = (price) =&gt; {
+  <span class="hljs-keyword">return</span> price * <span class="hljs-number">0.9</span>
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">clothesB</span> (<span class="hljs-params"></span>) </span>{}
+clothesB.prototype.calculate = (price) =&gt; {
+  <span class="hljs-keyword">return</span> price * <span class="hljs-number">0.8</span>
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">clothesC</span> (<span class="hljs-params"></span>) </span>{}
+clothesC.prototype.calculate = (price) =&gt; {
+  <span class="hljs-keyword">return</span> price * <span class="hljs-number">0.7</span>
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Price</span> (<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">this</span>.price = <span class="hljs-literal">null</span>
+  <span class="hljs-keyword">this</span>.strategy = <span class="hljs-literal">null</span>
+}
+
+Price.prototype.setPrice = (price) =&gt; {
+  <span class="hljs-keyword">this</span>.price = price
+}
+
+Price.prototype.setStrategy = (strategy) =&gt; {
+  <span class="hljs-keyword">this</span>.strategy = strategy
+}
+
+Price.prototype.getPrice = () =&gt; {
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.strategy.calculate(<span class="hljs-keyword">this</span>.price)
+}
+
+<span class="hljs-keyword">const</span> price = <span class="hljs-keyword">new</span> Price()
+price.setPrice(<span class="hljs-number">300</span>)
+price.setStrategy(clothesA)
+price.getPrice()
+</code></pre>
+<h3 id="4-javascript&#x7684;&#x7B56;&#x7565;&#x6A21;&#x5F0F;"><a name="4-javascript&#x7684;&#x7B56;&#x7565;&#x6A21;&#x5F0F;" class="anchor-navigation-ex-anchor" href="#4-javascript&#x7684;&#x7B56;&#x7565;&#x6A21;&#x5F0F;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="4-javascript&#x7684;&#x7B56;&#x7565;&#x6A21;&#x5F0F;" class="plugin-anchor" href="#4-javascript&#x7684;&#x7B56;&#x7565;&#x6A21;&#x5F0F;"><i class="fa fa-link" aria-hidden="true"></i></a>4. JavaScript&#x7684;&#x7B56;&#x7565;&#x6A21;&#x5F0F;</h3>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> strategies = {
+  A: (price) =&gt; price * <span class="hljs-number">0.9</span>,
+  B: (price) =&gt; price * <span class="hljs-number">0.8</span>,
+  C: (price) =&gt; price * <span class="hljs-number">0.7</span>,
+}
+
+<span class="hljs-keyword">const</span> calculatePrice = (type, price) =&gt; {
+  <span class="hljs-keyword">return</span> strategies[type](price)
+}
+</code></pre>
+<h3 id="5-&#x8868;&#x5355;&#x6821;&#x9A8C;"><a name="5-&#x8868;&#x5355;&#x6821;&#x9A8C;" class="anchor-navigation-ex-anchor" href="#5-&#x8868;&#x5355;&#x6821;&#x9A8C;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="5-&#x8868;&#x5355;&#x6821;&#x9A8C;" class="plugin-anchor" href="#5-&#x8868;&#x5355;&#x6821;&#x9A8C;"><i class="fa fa-link" aria-hidden="true"></i></a>5. &#x8868;&#x5355;&#x6821;&#x9A8C;</h3>
+<p>&#x5728;&#x4E00;&#x4E2A;web&#x9879;&#x76EE;&#x4E2D;&#xFF0C;&#x6CE8;&#x518C;&#xFF0C;&#x767B;&#x5F55;&#xFF0C;&#x4FEE;&#x6539;&#x7528;&#x6237;&#x4FE1;&#x606F;&#x7B49;&#x529F;&#x80FD;&#x90FD;&#x79BB;&#x4E0D;&#x5F00;&#x8868;&#x5355;&#x6821;&#x9A8C;&#x3002;&#x5728;&#x7528;&#x6237;&#x8F93;&#x5165;&#x7684;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x8FDB;&#x884C;&#x4E00;&#x4E9B;&#x6570;&#x636E;&#x6821;&#x9A8C;&#xFF0C;&#x5728;&#x628A;&#x7528;&#x6237;&#x6570;&#x636E;&#x4EA4;&#x7ED9;&#x540E;&#x53F0;&#x524D;&#xFF0C;&#x8FDB;&#x884C;&#x7B2C;&#x4E00;&#x6B65;&#x7684;&#x628A;&#x5173;&#xFF0C;&#x53EF;&#x4EE5;&#x907F;&#x514D;&#x63D0;&#x4EA4;&#x4E0D;&#x5408;&#x6CD5;&#x6570;&#x636E;&#x7684;&#x4E00;&#x4E9B;&#x7F51;&#x7EDC;&#x5F00;&#x9500;&#x3002;&#x4E0B;&#x9762;&#x662F;&#x7B56;&#x7565;&#x6A21;&#x5F0F;&#x5728;&#x8868;&#x5355;&#x6821;&#x9A8C;&#x4E2D;&#x7684;&#x5B9E;&#x6218;&#x3002;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> strategies = {
+  <span class="hljs-comment">// &#x4E0D;&#x4E3A;&#x7A7A;</span>
+  isNonEmpty: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">value, errorMsg</span>) </span>{
+    <span class="hljs-keyword">if</span> (value === <span class="hljs-string">&apos;&apos;</span>) {
+      <span class="hljs-keyword">return</span> errorMsg
+    }
+  },
+  <span class="hljs-comment">// &#x9650;&#x5236;&#x6700;&#x5C0F;&#x957F;&#x5EA6;</span>
+  minLength: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">value, length, errorMsg</span>) </span>{
+    <span class="hljs-keyword">if</span> (value.length &lt; length) {
+      <span class="hljs-keyword">return</span> errorMsg
+    }
+  },
+  <span class="hljs-comment">// &#x624B;&#x673A;&#x53F7;&#x7801;&#x683C;&#x5F0F;&#x6216;&#x7535;&#x8BDD;&#x53F7;&#x7801;&#x683C;&#x5F0F;</span>
+  isMobile: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">value, errorMsg</span>) </span>{
+    <span class="hljs-keyword">if</span> (!<span class="hljs-regexp">/(^1[3|5|8][0-9]{9}$)/</span>.test(value) &amp;&amp; !<span class="hljs-regexp">/^0\d{2,3}-?\d{7,8}$/</span>.test(value)) {
+      <span class="hljs-keyword">return</span> errorMsg
+    }
+  },
+  isImage: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">type, errorMsg</span>) </span>{
+    type = type.toLowerCase().replace(<span class="hljs-regexp">/jpg/i</span>, <span class="hljs-string">&apos;jpeg&apos;</span>)
+    <span class="hljs-keyword">var</span> r = type.match(<span class="hljs-regexp">/png|jpeg|bmp|gif/</span>);
+
+    <span class="hljs-keyword">if</span> (!r) {
+      <span class="hljs-keyword">return</span> errorMsg
+    }
+  }
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Validator</span> </span>{
+  <span class="hljs-keyword">constructor</span> () {
+    <span class="hljs-keyword">this</span>.cache = []
+  }
+
+  add (dom, rule, errorMsg) {
+    <span class="hljs-keyword">var</span> ary = rule.split(<span class="hljs-string">&apos;:&apos;</span>)
+    <span class="hljs-keyword">this</span>.cache.push(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+      <span class="hljs-keyword">var</span> strategy = ary.shift()
+      ary.unshift(dom.value)
+      ary.push(errorMsg)
+      <span class="hljs-keyword">return</span> strategies[strategy].apply(dom, ary)
+    })
+  }
+
+  start () {
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>, validatorFunc; i &lt; <span class="hljs-keyword">this</span>.cache.length; i++) {
+      <span class="hljs-keyword">var</span> validatorFunc = <span class="hljs-keyword">this</span>.cache[i]
+      <span class="hljs-keyword">var</span> msg = validatorFunc()
+      <span class="hljs-keyword">if</span> (msg) {
+        <span class="hljs-keyword">return</span> msg
+      }
+    }
+  }
+}
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="设计模式-职责链模式.html" class="navigation navigation-prev " aria-label="Previous page: 设计模式-职责链模式">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="设计模式-发布-订阅者模式.html" class="navigation navigation-next " aria-label="Next page: 设计模式-发布-订阅者模式">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"设计模式-策略模式","level":"5.3","depth":1,"next":{"title":"设计模式-发布-订阅者模式","level":"5.4","depth":1,"path":"design/设计模式-发布-订阅者模式.md","ref":"./design/设计模式-发布-订阅者模式.md","articles":[]},"previous":{"title":"设计模式-职责链模式","level":"5.2","depth":1,"path":"design/设计模式-职责链模式.md","ref":"./design/设计模式-职责链模式.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters-small","anchors","github","github-buttons","donate","sharing-plus","anchor-navigation-ex","favicon"],"styles":{"website":"./styles/website.css"},"pluginsConfig":{"github":{"url":"https://github.com/halaproliu"},"splitter":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"donate":{"alipay":"./source/images/alipay.png","alipayText":" ","button":"赞赏","title":"","wechat":"","wechatText":"微信打赏"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"favicon":{"shortcut":"./source/images/favicon.jpg","bookmark":"./source/images/favicon.jpg","appleTouch":"./source/images/apple-touch-icon.jpg","appleTouchMore":{"120x120":"./source/images/apple-touch-icon.jpg","180x180":"./source/images/apple-touch-icon.jpg"}},"github-buttons":{"buttons":[{"user":"Blankj","repo":"glory","type":"star","size":"small","count":true}]},"expandable-chapters-small":{},"sharing":{"qq":false,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"halapro.liu","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"halapro.liu的技术博客","language":"zh-hans","gitbook":"3.2.3","description":"前端技术记录"},"file":{"path":"design/设计模式-策略模式.md","mtime":"2019-09-05T09:10:10.998Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-05T09:39:26.943Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-donate/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

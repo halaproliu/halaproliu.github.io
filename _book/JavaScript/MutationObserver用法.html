@@ -1,0 +1,1055 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>MutationObserver用法 · halapro.liu的技术博客</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="halapro.liu">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-donate/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+
+        
+    
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="Promise的简单实现.html" />
+    
+    
+    <link rel="prev" href="IntersectionObserver实现懒加载.html" />
+    
+
+    
+        <link rel="shortcut icon" href='../source/images/favicon.jpg' type="image/x-icon">
+    
+    
+        <link rel="bookmark" href='../source/images/favicon.jpg' type="image/x-icon">
+    
+    
+        <link rel="apple-touch-icon" href='../source/images/apple-touch-icon.jpg'>
+    
+    
+        
+        <link rel="apple-touch-icon" sizes="120x120" href="../source/images/apple-touch-icon.jpg">
+        
+        <link rel="apple-touch-icon" sizes="180x180" href="../source/images/apple-touch-icon.jpg">
+        
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"Blankj","repo":"glory","type":"star","size":"small","count":true}]};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">PART Ⅰ - HTML</li>
+        
+        
+    
+
+    
+        
+        <li class="header">PART Ⅱ - CSS</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../css/css的水平格式化.html">
+            
+                <a href="../css/css的水平格式化.html">
+            
+                    
+                    css的水平格式化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../css/css的垂直格式化.html">
+            
+                <a href="../css/css的垂直格式化.html">
+            
+                    
+                    css的垂直格式化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../css/伪元素的妙用.html">
+            
+                <a href="../css/伪元素的妙用.html">
+            
+                    
+                    伪元素的妙用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="../css/css权重.html">
+            
+                <a href="../css/css权重.html">
+            
+                    
+                    css权重
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="../css/css实现轮播图.html">
+            
+                <a href="../css/css实现轮播图.html">
+            
+                    
+                    css实现轮播图
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">PART Ⅲ - JavaScript</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="ES6的Symbol类型介绍.html">
+            
+                <a href="ES6的Symbol类型介绍.html">
+            
+                    
+                    ES6的Symbol类型介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="let,const和var的区别.html">
+            
+                <a href="let,const和var的区别.html">
+            
+                    
+                    let,const和var的区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="简单的依赖注入（控制反转）实现.html">
+            
+                <a href="简单的依赖注入（控制反转）实现.html">
+            
+                    
+                    简单的依赖注入（控制反转）实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="pageshow的persisted总为false解决方案.html">
+            
+                <a href="pageshow的persisted总为false解决方案.html">
+            
+                    
+                    pageshow的persisted总为false解决方案
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="强制类型转换.html">
+            
+                <a href="强制类型转换.html">
+            
+                    
+                    强制类型转换
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6" data-path="setInterval缺点.html">
+            
+                <a href="setInterval缺点.html">
+            
+                    
+                    setInterval缺点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.7" data-path="js实现统计网页中字符串出现次数.html">
+            
+                <a href="js实现统计网页中字符串出现次数.html">
+            
+                    
+                    js实现统计网页中字符串出现次数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.8" data-path="使用CSS:filter实现类PS操作.html">
+            
+                <a href="使用CSS:filter实现类PS操作.html">
+            
+                    
+                    使用CSS:filter实现类PS操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.9" data-path="js实现下载文件.html">
+            
+                <a href="js实现下载文件.html">
+            
+                    
+                    js实现下载文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.10" data-path="js作用域你不得不知道的事.html">
+            
+                <a href="js作用域你不得不知道的事.html">
+            
+                    
+                    js作用域你不得不知道的事
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.11" data-path="IntersectionObserver实现懒加载.html">
+            
+                <a href="IntersectionObserver实现懒加载.html">
+            
+                    
+                    IntersectionObserver实现懒加载
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="4.12" data-path="MutationObserver用法.html">
+            
+                <a href="MutationObserver用法.html">
+            
+                    
+                    MutationObserver用法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.13" data-path="Promise的简单实现.html">
+            
+                <a href="Promise的简单实现.html">
+            
+                    
+                    Promise的简单实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.14" data-path="vue-cli下配置webpack的proxy参数.html">
+            
+                <a href="vue-cli下配置webpack的proxy参数.html">
+            
+                    
+                    vue-cli下配置webpack的proxy参数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.15" data-path="hashchange事件.html">
+            
+                <a href="hashchange事件.html">
+            
+                    
+                    hashchange事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.16" data-path="html5拖放事件API.html">
+            
+                <a href="html5拖放事件API.html">
+            
+                    
+                    html5拖放事件API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.17" data-path="JS复杂判断的简单写法.html">
+            
+                <a href="JS复杂判断的简单写法.html">
+            
+                    
+                    JS复杂判断的简单写法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.18" data-path="JS实现继承.html">
+            
+                <a href="JS实现继承.html">
+            
+                    
+                    JS实现继承
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.19" data-path="移动端固定底部的键盘随系统键盘弹起问题.html">
+            
+                <a href="移动端固定底部的键盘随系统键盘弹起问题.html">
+            
+                    
+                    移动端固定底部的键盘随系统键盘弹起问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.20" data-path="div使用contenteditable兼容问题.html">
+            
+                <a href="div使用contenteditable兼容问题.html">
+            
+                    
+                    div使用contenteditable兼容问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.21" data-path="requestAnimationFrame实现动画.html">
+            
+                <a href="requestAnimationFrame实现动画.html">
+            
+                    
+                    requestAnimationFrame实现动画
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.22" data-path="web前端hash路由的实现机制.html">
+            
+                <a href="web前端hash路由的实现机制.html">
+            
+                    
+                    web前端hash路由的实现机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.23" data-path="javascript常用方法.html">
+            
+                <a href="javascript常用方法.html">
+            
+                    
+                    javascript常用方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">PART Ⅵ - JavaScript设计模式</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../design/设计模式-单例模式.html">
+            
+                <a href="../design/设计模式-单例模式.html">
+            
+                    
+                    设计模式-单例模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="../design/设计模式-职责链模式.html">
+            
+                <a href="../design/设计模式-职责链模式.html">
+            
+                    
+                    设计模式-职责链模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="../design/设计模式-策略模式.html">
+            
+                <a href="../design/设计模式-策略模式.html">
+            
+                    
+                    设计模式-策略模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="../design/设计模式-发布-订阅者模式.html">
+            
+                <a href="../design/设计模式-发布-订阅者模式.html">
+            
+                    
+                    设计模式-发布-订阅者模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="../design/设计模式-命令模式.html">
+            
+                <a href="../design/设计模式-命令模式.html">
+            
+                    
+                    设计模式-命令模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6" data-path="../design/设计模式-享元模式.html">
+            
+                <a href="../design/设计模式-享元模式.html">
+            
+                    
+                    设计模式-享元模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.7" data-path="../design/设计模式-备忘录模式.html">
+            
+                <a href="../design/设计模式-备忘录模式.html">
+            
+                    
+                    设计模式-备忘录模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">PART Ⅴ - Vue源码学习</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../vue/vue源码学习-引入Vue时，Vue做了什么.html">
+            
+                <a href="../vue/vue源码学习-引入Vue时，Vue做了什么.html">
+            
+                    
+                    vue源码学习-引入Vue时，Vue做了什么
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="../vue/vue源码学习-newVue时发生了什么.html">
+            
+                <a href="../vue/vue源码学习-newVue时发生了什么.html">
+            
+                    
+                    vue源码学习-vue源码学习-new Vue时发生了什么
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="../vue/vue源码学习-初始化生命周期和事件队列.html">
+            
+                <a href="../vue/vue源码学习-初始化生命周期和事件队列.html">
+            
+                    
+                    vue源码学习-vue源码学习-初始化生命周期和事件队列
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4" data-path="../vue/vue源码学习-performance性能检测和proxy对象.html">
+            
+                <a href="../vue/vue源码学习-performance性能检测和proxy对象.html">
+            
+                    
+                    vue源码学习-performance性能检测和proxy对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.5" data-path="../vue/简单解析vue的nextTick异步更新方法.html">
+            
+                <a href="../vue/简单解析vue的nextTick异步更新方法.html">
+            
+                    
+                    vue源码学习-简单解析vue的nextTick异步更新方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.6" data-path="../vue/vue源码学习-初始化之initRender.html">
+            
+                <a href="../vue/vue源码学习-初始化之initRender.html">
+            
+                    
+                    vue源码学习-初始化之initRender
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.7" data-path="../vue/vue源码学习-initState.html">
+            
+                <a href="../vue/vue源码学习-initState.html">
+            
+                    
+                    vue源码学习-initState
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">PART Ⅵ - Webpack源码学习</li>
+        
+        
+    
+
+    
+        
+        <li class="header">PART Ⅶ - babel源码学习</li>
+        
+        
+    
+
+    
+        
+        <li class="header">PART Ⅶ - SHELL脚本学习</li>
+        
+        
+    
+        <li class="chapter " data-level="9.1" data-path="../shell/shell脚本设置git代理.html">
+            
+                <a href="../shell/shell脚本设置git代理.html">
+            
+                    
+                    shell脚本设置git代理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2" data-path="../shell/使用shell脚本获取当前git分支并提交远程分支.html">
+            
+                <a href="../shell/使用shell脚本获取当前git分支并提交远程分支.html">
+            
+                    
+                    使用shell脚本获取当前git分支并提交远程分支
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.3" data-path="../shell/使用shell脚本连接远程跳板机.html">
+            
+                <a href="../shell/使用shell脚本连接远程跳板机.html">
+            
+                    
+                    使用shell脚本连接远程跳板机
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >MutationObserver用法</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#mutationobserver&#x7528;&#x6CD5;"><b></b>MutationObserver&#x7528;&#x6CD5;</a></li><ul><ul><li><span class="title-icon "></span><a href="#observe&#x65B9;&#x6CD5;"><b></b>observe&#x65B9;&#x6CD5;</a></li><li><span class="title-icon "></span><a href="#disconnect&#x65B9;&#x6CD5;"><b></b>disconnect&#x65B9;&#x6CD5;</a></li><li><span class="title-icon "></span><a href="#takerecords&#x65B9;&#x6CD5;"><b></b>takeRecords&#x65B9;&#x6CD5;</a></li><li><span class="title-icon "></span><a href="#mutationrecord&#x5BF9;&#x8C61;"><b></b>MutationRecord&#x5BF9;&#x8C61;</a></li></ul></ul></ul></div><a href="#mutationobserver&#x7528;&#x6CD5;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="mutationobserver&#x7528;&#x6CD5;"><a name="mutationobserver&#x7528;&#x6CD5;" class="anchor-navigation-ex-anchor" href="#mutationobserver&#x7528;&#x6CD5;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="mutationobserver&#x7528;&#x6CD5;" class="plugin-anchor" href="#mutationobserver&#x7528;&#x6CD5;"><i class="fa fa-link" aria-hidden="true"></i></a>MutationObserver&#x7528;&#x6CD5;</h1>
+<p>Mutation Observer API &#x7528;&#x6765;&#x76D1;&#x89C6; DOM &#x53D8;&#x52A8;&#x3002;&#x6BD4;&#x5982;&#x8282;&#x70B9;&#x7684;&#x589E;&#x51CF;&#x3001;&#x5C5E;&#x6027;&#x7684;&#x53D8;&#x52A8;&#x3001;&#x6587;&#x672C;&#x5185;&#x5BB9;&#x7684;&#x53D8;&#x52A8;&#x3002;</p>
+<h3 id="observe&#x65B9;&#x6CD5;"><a name="observe&#x65B9;&#x6CD5;" class="anchor-navigation-ex-anchor" href="#observe&#x65B9;&#x6CD5;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="observe&#x65B9;&#x6CD5;" class="plugin-anchor" href="#observe&#x65B9;&#x6CD5;"><i class="fa fa-link" aria-hidden="true"></i></a>observe&#x65B9;&#x6CD5;</h3>
+<p>MutationObserver&#x4F7F;&#x7528;observe&#x65B9;&#x6CD5;&#x8FDB;&#x884C;&#x76D1;&#x542C;&#x6307;&#x5B9A;&#x7684;&#x5143;&#x7D20;&#x8282;&#x70B9;&#x53D8;&#x5316;&#xFF0C;observe&#x65B9;&#x6CD5;&#x63A5;&#x53D7;&#x4E24;&#x4E2A;&#x53C2;&#x6570;&#xFF1A;
+| &#x5C5E;&#x6027;                  | &#x63CF;&#x8FF0;                                                 | &#x7C7B;&#x578B;                     |
+| --------------------- | ---------------------------------------------------- | ------------------------ |
+| childList             | &#x5B50;&#x8282;&#x70B9;&#x7684;&#x53D8;&#x52A8;&#xFF08;&#x6307;&#x65B0;&#x589E;&#xFF0C;&#x5220;&#x9664;&#x6216;&#x8005;&#x66F4;&#x6539;&#xFF09;                 | Boolean                  |
+| attributes            | &#x5C5E;&#x6027;&#x7684;&#x53D8;&#x52A8;                                           | Boolean                  |
+| characterData         | &#x8282;&#x70B9;&#x5185;&#x5BB9;&#x6216;&#x8282;&#x70B9;&#x6587;&#x672C;&#x7684;&#x53D8;&#x52A8;                             | Boolean                  |
+| subtree               | &#x8868;&#x793A;&#x662F;&#x5426;&#x5C06;&#x8BE5;&#x89C2;&#x5BDF;&#x5668;&#x5E94;&#x7528;&#x4E8E;&#x8BE5;&#x8282;&#x70B9;&#x7684;&#x6240;&#x6709;&#x540E;&#x4EE3;&#x8282;&#x70B9;         | Boolean                  |
+| attributeOldValue     | &#x8868;&#x793A;&#x89C2;&#x5BDF;attributes&#x53D8;&#x52A8;&#x65F6;&#xFF0C;&#x662F;&#x5426;&#x9700;&#x8981;&#x8BB0;&#x5F55;&#x53D8;&#x52A8;&#x524D;&#x7684;&#x5C5E;&#x6027;&#x503C; | Boolean                  |
+| characterDataOldValue | &#x8868;&#x793A;&#x89C2;&#x5BDF;characterData&#x53D8;&#x52A8;&#x65F6;&#xFF0C;&#x662F;&#x5426;&#x9700;&#x8981;&#x8BB0;&#x5F55;&#x53D8;&#x52A8;&#x524D;&#x7684;&#x503C;  | Boolean                  |
+| attributeFilter       | &#x8868;&#x793A;&#x9700;&#x8981;&#x89C2;&#x5BDF;&#x7684;&#x7279;&#x5B9A;&#x5C5E;&#x6027;                               | Array&#xFF0C;&#x5982;[&apos;class&apos;,&apos;src&apos;] |</p>
+<pre><code class="lang-html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;en&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;viewport&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">http-equiv</span>=<span class="hljs-string">&quot;X-UA-Compatible&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;ie=edge&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Event Loop<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css">
+    <span class="hljs-selector-tag">input</span> {
+      <span class="hljs-attribute">width</span>: <span class="hljs-number">200px</span>;
+      <span class="hljs-attribute">height</span>: <span class="hljs-number">30px</span>;
+    }
+
+    <span class="hljs-selector-tag">input</span> {
+      <span class="hljs-attribute">-webkit-transition</span>: all <span class="hljs-number">0.30s</span> ease-in-out;
+      <span class="hljs-attribute">-moz-transition</span>: all <span class="hljs-number">0.30s</span> ease-in-out;
+      <span class="hljs-attribute">-ms-transition</span>: all <span class="hljs-number">0.30s</span> ease-in-out;
+      <span class="hljs-attribute">-o-transition</span>: all <span class="hljs-number">0.30s</span> ease-in-out;
+      <span class="hljs-attribute">outline</span>: none;
+      <span class="hljs-attribute">padding</span>: <span class="hljs-number">3px</span> <span class="hljs-number">0</span> <span class="hljs-number">3px</span> <span class="hljs-number">12px</span>;
+      <span class="hljs-attribute">margin</span>: <span class="hljs-number">5px</span> <span class="hljs-number">1px</span> <span class="hljs-number">3px</span> <span class="hljs-number">0</span>;
+      <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid <span class="hljs-number">#ddd</span>;
+      <span class="hljs-attribute">font-size</span>: <span class="hljs-number">18px</span>;
+    }
+
+    <span class="hljs-selector-tag">input</span><span class="hljs-selector-pseudo">:focus</span> {
+      <span class="hljs-attribute">box-shadow</span>: <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">5px</span> <span class="hljs-built_in">rgba</span>(216, 76, 41, 1);
+      <span class="hljs-attribute">padding</span>: <span class="hljs-number">3px</span> <span class="hljs-number">0</span> <span class="hljs-number">3px</span> <span class="hljs-number">12px</span>;
+      <span class="hljs-attribute">margin</span>: <span class="hljs-number">5px</span> <span class="hljs-number">1px</span> <span class="hljs-number">3px</span> <span class="hljs-number">0</span>;
+      <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid <span class="hljs-built_in">rgba</span>(216, 76, 41, 1);
+    }
+
+    <span class="hljs-selector-id">#btn</span> {
+      <span class="hljs-attribute">font-size</span>: <span class="hljs-number">18px</span>;
+      <span class="hljs-attribute">font-family</span>: Helvetica, Tahoma, Arial;
+      <span class="hljs-attribute">line-height</span>: <span class="hljs-number">1em</span>;   <span class="hljs-comment">/*&#x4F7F;&#x7528;em&#x4F5C;&#x4E3A;&#x5355;&#x4F4D;&#xFF0C;&#x5373;&#x4F7F;&#x5B57;&#x4F53;&#x53D8;&#x5316;&#xFF0C;&#x6309;&#x94AE;&#x7684;&#x6574;&#x4F53;&#x6837;&#x5F0F;&#x4E5F;&#x4F1A;&#x6309;&#x6BD4;&#x4F8B;&#x8DDF;&#x968F;&#x53D8;&#x5316;*/</span>
+      <span class="hljs-attribute">color</span>: <span class="hljs-number">#fff</span>;
+      <span class="hljs-attribute">background</span>: <span class="hljs-built_in">linear-gradient</span>(135deg,#fce,#cce);
+      <span class="hljs-attribute">padding</span>: .<span class="hljs-number">5em</span> <span class="hljs-number">1.5em</span>;
+      <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">2em</span>;
+      <span class="hljs-attribute">display</span>: inline-block;
+      <span class="hljs-attribute">outline</span>: none;
+    }
+  </span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">addCount</span>(<span class="hljs-params">el</span>) </span>{
+      el.value++
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">modifyAttribute</span> (<span class="hljs-params">el</span>) </span>{
+      <span class="hljs-built_in">console</span>.log(++el.dataset.count)
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">observe</span> (<span class="hljs-params">el, options, callback</span>) </span>{
+      <span class="hljs-keyword">var</span> MutationObserver = <span class="hljs-built_in">window</span>.MutationObserver || <span class="hljs-built_in">window</span>.WebKitMutationObserver || <span class="hljs-built_in">window</span>.MozMutationObserver
+      <span class="hljs-keyword">var</span> observer = <span class="hljs-keyword">new</span> MutationObserver(callback)
+      observer.observe(el, options)
+    }
+    <span class="hljs-built_in">window</span>.onload = () =&gt; {
+      <span class="hljs-keyword">var</span> text = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;text&apos;</span>)
+      <span class="hljs-keyword">var</span> btn = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;btn&apos;</span>)
+      btn.onclick = (e) =&gt; {
+        addCount(text)
+        modifyAttribute(text)
+      }
+      <span class="hljs-keyword">var</span> options = {
+        childList: <span class="hljs-literal">true</span>,
+        subtree: <span class="hljs-literal">true</span>,
+        attributes: <span class="hljs-literal">true</span>,
+        attributeOldValue: <span class="hljs-literal">true</span>,
+        characterData: <span class="hljs-literal">true</span>
+      }
+      observe(text, options, (records, instance) =&gt; {
+        <span class="hljs-built_in">console</span>.log(records)
+        <span class="hljs-built_in">console</span>.log(instance)
+        records.map(record =&gt; {
+          <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;Mutation Type: &apos;</span> + record.type)
+          <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;Mutation Change Attribute: &apos;</span> + record.attributeName)
+          <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;Previous attribute value: &apos;</span> + record.oldValue)
+        })
+      })
+
+
+    }
+  </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;0&quot;</span> <span class="hljs-attr">data-count</span>=<span class="hljs-string">&quot;0&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;btn&quot;</span>&gt;</span>&#x589E;&#x52A0;<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+<p><img src="https://upload-images.jianshu.io/upload_images/2377129-152d788f78aac2fe.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="disconnect&#x65B9;&#x6CD5;"><a name="disconnect&#x65B9;&#x6CD5;" class="anchor-navigation-ex-anchor" href="#disconnect&#x65B9;&#x6CD5;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="disconnect&#x65B9;&#x6CD5;" class="plugin-anchor" href="#disconnect&#x65B9;&#x6CD5;"><i class="fa fa-link" aria-hidden="true"></i></a>disconnect&#x65B9;&#x6CD5;</h3>
+<p>&#x5F53;&#x4E0D;&#x9700;&#x8981;&#x76D1;&#x542C;&#x8282;&#x70B9;&#x53D8;&#x5316;&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/MutationObserver/disconnect" title="&#x6B64;&#x9875;&#x9762;&#x4ECD;&#x672A;&#x88AB;&#x672C;&#x5730;&#x5316;, &#x671F;&#x5F85;&#x60A8;&#x7684;&#x7FFB;&#x8BD1;!" target="_blank"><code>disconnect()</code></a>&#x65B9;&#x6CD5;&#x53D6;&#x6D88;&#x76D1;&#x542C;&#x3002;</p>
+<h3 id="takerecords&#x65B9;&#x6CD5;"><a name="takerecords&#x65B9;&#x6CD5;" class="anchor-navigation-ex-anchor" href="#takerecords&#x65B9;&#x6CD5;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="takerecords&#x65B9;&#x6CD5;" class="plugin-anchor" href="#takerecords&#x65B9;&#x6CD5;"><i class="fa fa-link" aria-hidden="true"></i></a>takeRecords&#x65B9;&#x6CD5;</h3>
+<p>takeRecords&#x65B9;&#x6CD5;&#x7528;&#x6765;&#x6E05;&#x9664;&#x53D8;&#x52A8;&#x8BB0;&#x5F55;&#xFF0C;&#x5373;&#x4E0D;&#x518D;&#x5904;&#x7406;&#x672A;&#x5904;&#x7406;&#x7684;&#x53D8;&#x52A8;&#x3002;&#x8BE5;&#x65B9;&#x6CD5;&#x8FD4;&#x56DE;&#x53D8;&#x52A8;&#x8BB0;&#x5F55;&#x7684;&#x6570;&#x7EC4;&#x3002;</p>
+<h3 id="mutationrecord&#x5BF9;&#x8C61;"><a name="mutationrecord&#x5BF9;&#x8C61;" class="anchor-navigation-ex-anchor" href="#mutationrecord&#x5BF9;&#x8C61;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="mutationrecord&#x5BF9;&#x8C61;" class="plugin-anchor" href="#mutationrecord&#x5BF9;&#x8C61;"><i class="fa fa-link" aria-hidden="true"></i></a>MutationRecord&#x5BF9;&#x8C61;</h3>
+<p>DOM &#x6BCF;&#x6B21;&#x53D1;&#x751F;&#x53D8;&#x5316;&#xFF0C;&#x5C31;&#x4F1A;&#x751F;&#x6210;&#x4E00;&#x6761;&#x53D8;&#x52A8;&#x8BB0;&#x5F55;&#xFF08;MutationRecord &#x5B9E;&#x4F8B;&#xFF09;&#x3002;&#x8BE5;&#x5B9E;&#x4F8B;&#x5305;&#x542B;&#x4E86;&#x4E0E;&#x53D8;&#x52A8;&#x76F8;&#x5173;&#x7684;&#x6240;&#x6709;&#x4FE1;&#x606F;&#x3002;Mutation Observer &#x5904;&#x7406;&#x7684;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x4E2A;MutationRecord&#x5B9E;&#x4F8B;&#x6240;&#x7EC4;&#x6210;&#x7684;&#x6570;&#x7EC4;&#x3002;</p>
+<p>MutationRecord&#x5BF9;&#x8C61;&#x5305;&#x542B;&#x4E86;DOM&#x7684;&#x76F8;&#x5173;&#x4FE1;&#x606F;&#xFF0C;&#x6709;&#x5982;&#x4E0B;&#x5C5E;&#x6027;&#xFF1A;</p>
+<blockquote>
+<p>type&#xFF1A;&#x89C2;&#x5BDF;&#x7684;&#x53D8;&#x52A8;&#x7C7B;&#x578B;&#xFF08;attribute&#x3001;characterData&#x6216;&#x8005;childList&#xFF09;&#x3002;
+target&#xFF1A;&#x53D1;&#x751F;&#x53D8;&#x52A8;&#x7684;DOM&#x8282;&#x70B9;&#x3002;
+addedNodes&#xFF1A;&#x65B0;&#x589E;&#x7684;DOM&#x8282;&#x70B9;&#x3002;
+removedNodes&#xFF1A;&#x5220;&#x9664;&#x7684;DOM&#x8282;&#x70B9;&#x3002;
+previousSibling&#xFF1A;&#x524D;&#x4E00;&#x4E2A;&#x540C;&#x7EA7;&#x8282;&#x70B9;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x5219;&#x8FD4;&#x56DE;null&#x3002;
+nextSibling&#xFF1A;&#x4E0B;&#x4E00;&#x4E2A;&#x540C;&#x7EA7;&#x8282;&#x70B9;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x5219;&#x8FD4;&#x56DE;null&#x3002;
+attributeName&#xFF1A;&#x53D1;&#x751F;&#x53D8;&#x52A8;&#x7684;&#x5C5E;&#x6027;&#x3002;&#x5982;&#x679C;&#x8BBE;&#x7F6E;&#x4E86;attributeFilter&#xFF0C;&#x5219;&#x53EA;&#x8FD4;&#x56DE;&#x9884;&#x5148;&#x6307;&#x5B9A;&#x7684;&#x5C5E;&#x6027;&#x3002;
+oldValue&#xFF1A;&#x53D8;&#x52A8;&#x524D;&#x7684;&#x503C;&#x3002;&#x8FD9;&#x4E2A;&#x5C5E;&#x6027;&#x53EA;&#x5BF9;attribute&#x548C;characterData&#x53D8;&#x52A8;&#x6709;&#x6548;&#xFF0C;&#x5982;&#x679C;&#x53D1;&#x751F;childList&#x53D8;&#x52A8;&#xFF0C;&#x5219;&#x8FD4;&#x56DE;null&#x3002;</p>
+</blockquote>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="IntersectionObserver实现懒加载.html" class="navigation navigation-prev " aria-label="Previous page: IntersectionObserver实现懒加载">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="Promise的简单实现.html" class="navigation navigation-next " aria-label="Next page: Promise的简单实现">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"MutationObserver用法","level":"4.12","depth":1,"next":{"title":"Promise的简单实现","level":"4.13","depth":1,"path":"JavaScript/Promise的简单实现.md","ref":"./JavaScript/Promise的简单实现.md","articles":[]},"previous":{"title":"IntersectionObserver实现懒加载","level":"4.11","depth":1,"path":"JavaScript/IntersectionObserver实现懒加载.md","ref":"./JavaScript/IntersectionObserver实现懒加载.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters-small","anchors","github","github-buttons","donate","sharing-plus","anchor-navigation-ex","favicon"],"styles":{"website":"./styles/website.css"},"pluginsConfig":{"github":{"url":"https://github.com/halaproliu"},"splitter":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"donate":{"alipay":"./source/images/alipay.png","alipayText":" ","button":"赞赏","title":"","wechat":"","wechatText":"微信打赏"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"favicon":{"shortcut":"./source/images/favicon.jpg","bookmark":"./source/images/favicon.jpg","appleTouch":"./source/images/apple-touch-icon.jpg","appleTouchMore":{"120x120":"./source/images/apple-touch-icon.jpg","180x180":"./source/images/apple-touch-icon.jpg"}},"github-buttons":{"buttons":[{"user":"Blankj","repo":"glory","type":"star","size":"small","count":true}]},"expandable-chapters-small":{},"sharing":{"qq":false,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"halapro.liu","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"halapro.liu的技术博客","language":"zh-hans","gitbook":"3.2.3","description":"前端技术记录"},"file":{"path":"JavaScript/MutationObserver用法.md","mtime":"2019-09-05T08:54:39.126Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-05T09:39:26.943Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-donate/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
