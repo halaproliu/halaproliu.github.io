@@ -45,10 +45,12 @@
       ]
     },
     "donate": {
-      "alipay": "./source/images/alipay.png",
+      "alipay": "./imgs/alipay.png",
+      "wechat": "./imgs/wechatPay.png",
       "title": "",
       "button": "赞赏",
-      "alipayText": " "
+      "alipayText": "支付宝捐赠",
+      "wechatText": "微信捐赠"
     },
     "sharing": {
       "douban": false,
@@ -68,16 +70,7 @@
       "vk": false,
       "weibo": false,
       "whatsapp": false,
-      "all": [
-        "google",
-        "facebook",
-        "weibo",
-        "twitter",
-        "qq",
-        "qzone",
-        "linkedin",
-        "pocket"
-      ]
+      "all": ["google", "facebook", "weibo", "twitter", "qq", "qzone", "linkedin", "pocket"]
     },
     "anchor-navigation-ex": {
       "showLevel": false
