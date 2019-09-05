@@ -10,6 +10,13 @@
   "structure": {
     "readme": "README.md"
   },
+  "links": {
+    "sidebar": {
+      "github": "https://github.com/halaproliu",
+      "掘金": "https://juejin.im/user/59f8378f6fb9a045263ae315",
+      "简书": "https://www.jianshu.com/u/fdf0c90358ac"
+    }
+  },
   "plugins": [
     "-sharing",
     "splitter",
