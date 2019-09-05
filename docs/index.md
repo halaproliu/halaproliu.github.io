@@ -1,5 +1,9 @@
 ### Vue 2.5.21源码
 
+1. [Vue源码之初始化操作](./index)
+2. [Vue源码之defineReactive](./Vue源码之defineReactive)
+3. [Vue源码之Observer](./Vue源码之Observer)
+
 ![Vue 2.5.21思维导图](../imgs/Vue2.5.21.png)
 
 当Vue加载到页面时，做了些什么呢。
