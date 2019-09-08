@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://halaproliu.github.io/"/>
-  <updated>2019-09-07T12:53:01.300Z</updated>
+  <updated>2019-09-08T12:56:19.083Z</updated>
   <id>https://halaproliu.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Mac打造个人开发环境-vscode篇</title>
+    <link href="https://halaproliu.github.io/2019/09/08/Mac%E6%89%93%E9%80%A0%E4%B8%AA%E4%BA%BA%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83-vscode%E7%AF%87/"/>
+    <id>https://halaproliu.github.io/2019/09/08/Mac打造个人开发环境-vscode篇/</id>
+    <published>2019-09-08T12:55:43.000Z</published>
+    <updated>2019-09-08T12:56:19.083Z</updated>
+    
+    <content type="html"><![CDATA[<h3>前言</h3><p>俗话说，工欲善其事，必先利其器。作为一个开发人员，一个好的开发工具是coding体验的基础。今天就来介绍一下一些vscode好用的插件，至于vscode是什么，就不用我说了吧，巨硬大法好。</p><h5>Auto Close Tag</h5><p>这款插件能够自动添加html或xml标签的结束标签，提升开发效率有没有。</p><h5>Auto Import</h5><p>前端工程化进行到今天，模块化开发已经是非常普及了。Auto Import提供自动模块引入提示，省心又省力，减少编写路径的时间，想想都觉得美妙。</p><h5>Auto Rename Tag</h5><p>当需要修改html或xml标签时，起始和结尾各改一次，多麻烦啊，万一标签的子节点很多，还要拖动去寻找结束标签，这款插件省去了不少时间。</p><h5>Bracket Pair Colorizer</h5><p>相对应的大括号变成相同的颜色，轻松的知道代码代码结构</p><h5>Document this</h5><p>自动生成注释，方便后续review代码。</p><h5>GitLens</h5><p>让你拥有在vscode查看git提交记录，对比记录，提交，pull代码等各种git常用操作。</p><h5>indent-rainbow</h5><p>添加缩进的颜色块，让代码缩进更加直观。</p><h5>Markdown Preview Enhanced</h5><p>预览markdown的功能，让vscode编写markdown更简单</p><h5>Path Intellisense</h5><p>自动路径补全，不用再去翻目录结构了</p><h5>Project Manager</h5><p>项目管理工具，可以方便的配置多个工程到命令行中，快速选取指定工程</p><h5>view-in-browser</h5><p>在vscode中，右键打开浏览器，不用去浏览器输入文件路径，也不用直接去找文件打开了。</p>]]></content>
+    
+    <summary type="html">
+    
+      俗话说，工欲善其事，必先利其器。作为一个开发人员，一个好的开发工具是coding体验的基础。
+    
+    </summary>
+    
+    
+    
+      <category term="mac" scheme="https://halaproliu.github.io/tags/mac/"/>
+    
+  </entry>
   
   <entry>
     <title>mac终端神器iterm2和zsh</title>
