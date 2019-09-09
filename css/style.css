@@ -266,6 +266,10 @@ a {
   left: 300px;
   width: auto;
 }
+#container #gitalk-container {
+  width: 88%;
+  margin-left: 5%;
+}
 @media screen and (max-width: 800px) {
   #container .left-col {
     display: none;
