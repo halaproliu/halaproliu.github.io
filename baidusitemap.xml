@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://halaproliu.gitee.io/iterm2zsh/</loc>
+    <loc>http://liuwenjian.cn/iterm2zsh/</loc>
     <lastmod>2019-09-11</lastmod>
   </url>  <url>
-    <loc>https://halaproliu.gitee.io/vscode/</loc>
+    <loc>http://liuwenjian.cn/vscode/</loc>
     <lastmod>2019-09-11</lastmod>
   </url>  <url>
-    <loc>https://halaproliu.gitee.io/gittalk/</loc>
+    <loc>http://liuwenjian.cn/gittalk/</loc>
     <lastmod>2019-09-11</lastmod>
   </url>  <url>
-    <loc>https://halaproliu.gitee.io/hexo/</loc>
+    <loc>http://liuwenjian.cn/hexo/</loc>
     <lastmod>2019-09-07</lastmod>
   </url>
 </urlset>

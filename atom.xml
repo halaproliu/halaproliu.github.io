@@ -5,9 +5,9 @@
   <subtitle>三分钟热度工程师</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="https://halaproliu.gitee.io/"/>
+  <link href="http://liuwenjian.cn/"/>
   <updated>2019-09-11T15:56:01.228Z</updated>
-  <id>https://halaproliu.gitee.io/</id>
+  <id>http://liuwenjian.cn/</id>
   
   <author>
     <name>halapro.liu</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>个人博客评论插件之gittalk</title>
-    <link href="https://halaproliu.gitee.io/gittalk/"/>
-    <id>https://halaproliu.gitee.io/gittalk/</id>
+    <link href="http://liuwenjian.cn/gittalk/"/>
+    <id>http://liuwenjian.cn/gittalk/</id>
     <published>2019-09-10T04:37:52.000Z</published>
     <updated>2019-09-11T15:56:01.228Z</updated>
     
@@ -33,14 +33,14 @@
     
     
     
-      <category term="gittalk" scheme="https://halaproliu.gitee.io/tags/gittalk/"/>
+      <category term="gittalk" scheme="http://liuwenjian.cn/tags/gittalk/"/>
     
   </entry>
   
   <entry>
     <title>Mac打造个人开发环境-vscode篇</title>
-    <link href="https://halaproliu.gitee.io/vscode/"/>
-    <id>https://halaproliu.gitee.io/vscode/</id>
+    <link href="http://liuwenjian.cn/vscode/"/>
+    <id>http://liuwenjian.cn/vscode/</id>
     <published>2019-09-08T12:55:43.000Z</published>
     <updated>2019-09-11T15:56:09.237Z</updated>
     
@@ -54,14 +54,14 @@
     
     
     
-      <category term="mac" scheme="https://halaproliu.gitee.io/tags/mac/"/>
+      <category term="mac" scheme="http://liuwenjian.cn/tags/mac/"/>
     
   </entry>
   
   <entry>
     <title>Mac终端神器iterm2和zsh</title>
-    <link href="https://halaproliu.gitee.io/iterm2zsh/"/>
-    <id>https://halaproliu.gitee.io/iterm2zsh/</id>
+    <link href="http://liuwenjian.cn/iterm2zsh/"/>
+    <id>http://liuwenjian.cn/iterm2zsh/</id>
     <published>2019-09-07T12:16:29.000Z</published>
     <updated>2019-09-11T15:56:17.904Z</updated>
     
@@ -75,14 +75,14 @@
     
     
     
-      <category term="mac" scheme="https://halaproliu.gitee.io/tags/mac/"/>
+      <category term="mac" scheme="http://liuwenjian.cn/tags/mac/"/>
     
   </entry>
   
   <entry>
     <title>Hexo</title>
-    <link href="https://halaproliu.gitee.io/hexo/"/>
-    <id>https://halaproliu.gitee.io/hexo/</id>
+    <link href="http://liuwenjian.cn/hexo/"/>
+    <id>http://liuwenjian.cn/hexo/</id>
     <published>2019-09-06T16:15:43.249Z</published>
     <updated>2019-09-07T12:48:10.289Z</updated>
     
