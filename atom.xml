@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://liuwenjian.cn/"/>
-  <updated>2019-09-11T15:56:01.228Z</updated>
+  <updated>2019-09-17T11:23:12.231Z</updated>
   <id>http://liuwenjian.cn/</id>
   
   <author>
@@ -15,6 +15,48 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Mac安装FTP终端工具</title>
+    <link href="http://liuwenjian.cn/macFtp/"/>
+    <id>http://liuwenjian.cn/macFtp/</id>
+    <published>2019-09-16T02:58:42.000Z</published>
+    <updated>2019-09-17T11:23:12.231Z</updated>
+    
+    <content type="html"><![CDATA[<h3>使用HomeBrew安装</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">brew install telnet </span><br><span class="line">brew install inetutils </span><br><span class="line">brew link --overwrite inetutils</span><br></pre></td></tr></table></figure><p>使用如下命令确认是否安装成功：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ftp --<span class="built_in">help</span></span><br></pre></td></tr></table></figure><h3>如何连接ftp</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ftp &lt;server-ip&gt;</span><br></pre></td></tr></table></figure><h3>上传下载命令</h3><p>上传：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">put &lt;<span class="built_in">local</span>-filepath&gt; &lt;remote-filepath&gt;</span><br></pre></td></tr></table></figure><p>下载：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">get &lt;remote-filepath&gt; &lt;<span class="built_in">local</span>-filepath&gt;</span><br></pre></td></tr></table></figure><h3>更多命令</h3><p>连接ftp后，可以使用help命令进行查看。</p><h3>退出ftp</h3><p>直接输入quit即可</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ftp&gt; quit</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      Mac安装FTP终端工具
+    
+    </summary>
+    
+    
+    
+      <category term="Mac" scheme="http://liuwenjian.cn/tags/Mac/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Mac使用shadowsocks配合Proxies接收gmail</title>
+    <link href="http://liuwenjian.cn/proxies/"/>
+    <id>http://liuwenjian.cn/proxies/</id>
+    <published>2019-09-16T02:58:42.000Z</published>
+    <updated>2019-11-29T14:29:20.467Z</updated>
+    
+    <content type="html"><![CDATA[<h3>使用Proxies配合Shadowsocks翻墙</h3><p><img src="'../../../../images/proxies.png'" alt><img src="'../../../../images/addProxies.png'" alt><img src="'../../../../images/rule.png'" alt><img src="'../../../../images/outlook.png'" alt><img src="'../../../../images/messenger.png'" alt></p><p>ok,接下来就可以愉快的使用messenger和gmail了。</p>]]></content>
+    
+    <summary type="html">
+    
+      Mac使用shadowsocks配合Proxies接收gmail
+    
+    </summary>
+    
+    
+    
+      <category term="Mac" scheme="http://liuwenjian.cn/tags/Mac/"/>
+    
+  </entry>
   
   <entry>
     <title>个人博客评论插件之gittalk</title>

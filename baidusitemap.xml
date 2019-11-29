@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://liuwenjian.cn/proxies/</loc>
+    <lastmod>2019-11-29</lastmod>
+  </url>  <url>
+    <loc>http://liuwenjian.cn/macFtp/</loc>
+    <lastmod>2019-09-17</lastmod>
+  </url>  <url>
     <loc>http://liuwenjian.cn/iterm2zsh/</loc>
     <lastmod>2019-09-11</lastmod>
   </url>  <url>
