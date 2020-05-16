@@ -30,17 +30,26 @@
   <meta name="google-site-verification" content="Xc5nXsYqiW_CPitgBqG82UwV24LmXwWKaZO4t3c5VLQ">
   
 
-  <meta name="description" content="web,vue,javascript,css,html,webpack,babel">
+  <meta name="description" content="如何在 CentOS 8 上安装Jenkins Jenkins 是目前最流行的基于Java，开源的自动化服务器，它可以让你轻松地搭建持续集成和持续交付（CI/CD）平台。 持续集成（CI）是DevOps的一种实践，团队成员定期将其代码更改提交到版本控制存储库，然后运行自动构建和测试。持续交付（CD）是一系列实践，其中，代码变更后可以自动构建编译，测试并部署到生产中。 本教程主要讲解了如何一步一步在">
 <meta name="keywords" content="web">
-<meta property="og:type" content="website">
+<meta property="og:type" content="article">
 <meta property="og:title" content="halapro.liu&#39;s blog">
-<meta property="og:url" content="https://halaproliu.github.io/archives/index.html">
+<meta property="og:url" content="https://halaproliu.github.io/jekkins/index.html">
 <meta property="og:site_name" content="halapro.liu&#39;s blog">
-<meta property="og:description" content="web,vue,javascript,css,html,webpack,babel">
+<meta property="og:description" content="如何在 CentOS 8 上安装Jenkins Jenkins 是目前最流行的基于Java，开源的自动化服务器，它可以让你轻松地搭建持续集成和持续交付（CI/CD）平台。 持续集成（CI）是DevOps的一种实践，团队成员定期将其代码更改提交到版本控制存储库，然后运行自动构建和测试。持续交付（CD）是一系列实践，其中，代码变更后可以自动构建编译，测试并部署到生产中。 本教程主要讲解了如何一步一步在">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://halaproliu.github.io/images/unlockJekkins.webp">
+<meta property="og:image" content="https://halaproliu.github.io/images/installPlugin.webp">
+<meta property="og:image" content="https://halaproliu.github.io/images/installing.webp">
+<meta property="og:image" content="https://halaproliu.github.io/images/createUser.webp">
+<meta property="og:image" content="https://halaproliu.github.io/images/instanceConfiguration.webp">
+<meta property="og:image" content="https://halaproliu.github.io/images/jekkinsReady.webp">
+<meta property="og:image" content="https://halaproliu.github.io/images/jekkinsSuccess.webp">
+<meta property="og:updated_time" content="2020-05-16T10:44:16.450Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="halapro.liu&#39;s blog">
-<meta name="twitter:description" content="web,vue,javascript,css,html,webpack,babel">
+<meta name="twitter:description" content="如何在 CentOS 8 上安装Jenkins Jenkins 是目前最流行的基于Java，开源的自动化服务器，它可以让你轻松地搭建持续集成和持续交付（CI/CD）平台。 持续集成（CI）是DevOps的一种实践，团队成员定期将其代码更改提交到版本控制存储库，然后运行自动构建和测试。持续交付（CD）是一系列实践，其中，代码变更后可以自动构建编译，测试并部署到生产中。 本教程主要讲解了如何一步一步在">
+<meta name="twitter:image" content="https://halaproliu.github.io/images/unlockJekkins.webp">
 
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
@@ -74,7 +83,7 @@
   
 
   
-  <title>Archives | halapro.liu&#39;s blog</title>
+  <title>halapro.liu&#39;s blog</title>
 
   <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
   <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -84,8 +93,8 @@
       fancybox: true,
       animate: true,
       isHome: false,
-      isPost: false,
-        isArchive: true,
+      isPost: true,
+        isArchive: false,
           isTag: false,
             isCategory: false,
               fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
@@ -314,284 +323,213 @@
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
       <div class="body-wrap">
+        <article id="post-jekkins" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/jekkins/" class="article-date">
+      <time datetime="2020-05-16T10:35:28.977Z" itemprop="datePublished">2020-05-16</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1>如何在 CentOS 8 上安装Jenkins</h1>
+<p>Jenkins 是目前最流行的基于Java，开源的自动化服务器，它可以让你轻松地搭建持续集成和持续交付（CI/CD）平台。</p>
+<p>持续集成（CI）是DevOps的一种实践，团队成员定期将其代码更改提交到版本控制存储库，然后运行自动构建和测试。持续交付（CD）是一系列实践，其中，代码变更后可以自动构建编译，测试并部署到生产中。</p>
+<p>本教程主要讲解了如何一步一步在CentOS 8上安装Jenkins的步骤。</p>
+<h3>安装Jenkins</h3>
+<p>在CentOS 8 上安装Jenkins需要使用root账号或具有sudo权限的账号。</p>
+<p>第一步、因为Jenkins是使用Java编写的，所以需要安装Java环境，Jenkins需要Java8或更高版本。</p>
+<p>这里使用OpenJDK，首先通过一下命令安装OpenJDK.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dnf install java<span class="number">-1.8</span><span class="number">.0</span>-openjdk-devel</span><br></pre></td></tr></table></figure>
+<p>如果系统上安装了多个Java版本，请确保Java 8是默认Java版本。</p>
+<p>你可能对关于更详细如何在CentOS上安装Java教程也感兴趣。</p>
+<p>第二步、启用Jenkins存储库。运行以下命令下载并导入GPG密钥：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo wget -O /etc/yum.repos.d/jenkins.repo http:<span class="comment">//pkg.jenkins-ci.org/redhat-stable/jenkins.repo</span></span><br><span class="line">sudo rpm --<span class="keyword">import</span> https:<span class="comment">//jenkins-ci.org/redhat/jenkins-ci.org.key</span></span><br></pre></td></tr></table></figure>
+<p>第三步、通过键入以下命令安装最新的Jenkins稳定版本：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dnf install jenkins</span><br></pre></td></tr></table></figure>
+<p>安装过程完成后，启动Jenkins服务并启用它以在系统引导时启动：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl start jenkins</span><br><span class="line">sudo systemctl enable jenkins</span><br></pre></td></tr></table></figure>
+<p>检查Jenkins是否正在运行，请输入：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl status jenkins</span><br></pre></td></tr></table></figure>
+<p>输出应类似如下所示：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Loaded: loaded (<span class="regexp">/etc/</span>rc.d/init.d/jenkins; generated)</span><br><span class="line">Active: active (running) since Thu <span class="number">2019</span><span class="number">-11</span><span class="number">-05</span> <span class="number">21</span>:<span class="number">31</span>:<span class="number">36</span> UTC; <span class="number">3</span>s ago</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<h3>配置防火墙</h3>
+<p>如果要在受防火墙保护的远程CentOS服务器上安装Jenkins，则需要开放8080端口。</p>
+<p>使用以下命令打开必要的端口：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo firewall-cmd --permanent --zone=public --add-port=<span class="number">8080</span>/tcp</span><br><span class="line">sudo firewall-cmd --reload</span><br></pre></td></tr></table></figure>
+<h3>设置Jenkins</h3>
+<p>安装完成并在防火墙上放开8080端口口，就可以开始Jenkins设置过程。首先，请打开浏览器并键入域或服务器的IP地址，然后键入port 8080：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http:<span class="comment">//your_ip_or_domain:8080</span></span><br></pre></td></tr></table></figure>
+<p>将会出现类似以下的屏幕，提示您输入在安装过程中创建的管理员密码：</p>
+<p><img src="../../../../images/unlockJekkins.webp" alt></p>
+<p>可以使用cat命令在服务器CentOS 8上查看Jenkins的管理员账号密码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo cat /<span class="keyword">var</span>/lib/jenkins/secrets/initialAdminPassword</span><br></pre></td></tr></table></figure>
+<p>您应该看到一个32个字符长的字母数字密码，如下所示：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">e3bc55dh402640c54360b8db41e4f3au</span><br></pre></td></tr></table></figure>
+<p>从终端复制密码，将其粘贴到“管理员密码”字段中，然后单击“继续”。</p>
+<p><img src="../../../../images/installPlugin.webp" alt></p>
+<p>在下一个屏幕上，系统将询问您是否要安装建议的插件或选择要安装的插件。单击“安装建议的插件”框，安装过程将开始。</p>
+<p><img src="../../../../images/installing.webp" alt></p>
+<p>安装完成后，将提示您设置第一个管理用户。填写所有必需的信息，然后单击“保存并继续”。</p>
+<p><img src="../../../../images/createUser.webp" alt></p>
+<p>在下一页上，安装程序将要求您设置Jenkins实例的URL。URL字段将填充自动生成的URL。</p>
+<p><img src="../../../../images/instanceConfiguration.webp" alt></p>
+<p>要完成设置，请单击“保存并完成”按钮确认URL。</p>
+<p><img src="../../../../images/jekkinsReady.webp" alt></p>
+<p>最后，单击“开始使用Jenkins”按钮，您将被重定向到以您在前面的步骤之一中创建的admin用户身份登录的Jenkins仪表板。</p>
+<p><img src="../../../../images/jekkinsSuccess.webp" alt></p>
+<p>如果您到了这一步，则说明您已经在CentOS系统上成功安装了Jenkins。</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/jekkins/"></a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">halapro.liu</a></p>
+        <p><span>发布时间:</span>2020-05-16, 18:35:28</p>
+        <p><span>最后更新:</span>2020-05-16, 18:44:16</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/jekkins/" title="">https://halaproliu.github.io/jekkins/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://halaproliu.github.io/jekkins/　　作者: halapro.liu" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
         
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/screenCapture/">
+                    非常好看的屏幕截图工具Carbon和polacode
+                </a>
+            </div>
+        
+    </nav>
+
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/jekkins/" class="archive-article-date">
-      <time datetime="2020-05-16T10:35:28.977Z" itemprop="datePublished">05-16</time>
-</a>
-
-
-        </div>
-         
-        <div class="article-info info-on-archive">
-          
-
-          
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
 </article>
-  
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#null"><span class="toc-number">1.</span> <span class="toc-text">如何在 CentOS 8 上安装Jenkins</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#null"><span class="toc-number">1.0.1.</span> <span class="toc-text">安装Jenkins</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#null"><span class="toc-number">1.0.2.</span> <span class="toc-text">配置防火墙</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#null"><span class="toc-number">1.0.3.</span> <span class="toc-text">设置Jenkins</span></a></li></ol></li></ol></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
     
+<div class="share">
     
-      
-        </div></section>
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
         </div>
-        <div class="archives">
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"　| halapro.liu's blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
     
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/screenCapture/" class="archive-article-date">
-      <time datetime="2019-12-13T15:42:51.000Z" itemprop="datePublished">12-13</time>
-</a>
+
+    
+</div>
 
 
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/screenCapture/">非常好看的屏幕截图工具Carbon和polacode</a>
-    </h1>
-  
 
-        <div class="article-info info-on-archive">
-          
 
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/代码屏幕截图/">代码屏幕截图</a></li></ul>
+
+
+
+    
+        <section id="comments">
+    <style> aside.comment-bar { margin: auto 30px; }</style>
+    <div id="disqus_thread"></div>
+    <script>
+        var disqus_config = function(){
+            this.page.url = 'https://halaproliu.github.io/jekkins/';
+            this.page.identifier = 'jekkins/';
+        };
+        var loadComment = function(){
+            var d = document, s = d.createElement('script');
+            s.src = '//halaproliu.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        }
+    </script>
+    
+    <script> loadComment(); </script>
+
+</section>
+
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/screenCapture/" title="下一篇: 非常好看的屏幕截图工具Carbon和polacode">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
     </div>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/macFtp/" class="archive-article-date">
-      <time datetime="2019-09-16T02:58:42.000Z" itemprop="datePublished">09-16</time>
-</a>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/jekkins/">jekkins</a></li><li class="post-list-item"><a class="post-list-link" href="/screenCapture/">非常好看的屏幕截图工具Carbon和polacode</a></li><li class="post-list-item"><a class="post-list-link" href="/macFtp/">Mac安装FTP终端工具</a></li><li class="post-list-item"><a class="post-list-link" href="/proxies/">Mac使用shadowsocks配合Proxies接收gmail</a></li><li class="post-list-item"><a class="post-list-link" href="/gittalk/">个人博客评论插件之gittalk</a></li><li class="post-list-item"><a class="post-list-link" href="/vscode/">Mac打造个人开发环境-vscode篇</a></li><li class="post-list-item"><a class="post-list-link" href="/iterm2zsh/">Mac终端神器iterm2和zsh</a></li><li class="post-list-item"><a class="post-list-link" href="/hexo/">Hexo</a></li></ul>
 
 
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/macFtp/">Mac安装FTP终端工具</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mac/">Mac</a></li></ul>
-    </div>
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/proxies/" class="archive-article-date">
-      <time datetime="2019-09-16T02:58:42.000Z" itemprop="datePublished">09-16</time>
-</a>
 
 
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/proxies/">Mac使用shadowsocks配合Proxies接收gmail</a>
-    </h1>
-  
+    <script>
+        
+    </script>
 
-        <div class="article-info info-on-archive">
-          
-
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mac/">Mac</a></li></ul>
-    </div>
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/gittalk/" class="archive-article-date">
-      <time datetime="2019-09-10T04:37:52.000Z" itemprop="datePublished">09-10</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/gittalk/">个人博客评论插件之gittalk</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/gittalk/">gittalk</a></li></ul>
-    </div>
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/vscode/" class="archive-article-date">
-      <time datetime="2019-09-08T12:55:43.000Z" itemprop="datePublished">09-08</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/vscode/">Mac打造个人开发环境-vscode篇</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mac/">mac</a></li></ul>
-    </div>
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/iterm2zsh/" class="archive-article-date">
-      <time datetime="2019-09-07T12:16:29.000Z" itemprop="datePublished">09-07</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/iterm2zsh/">Mac终端神器iterm2和zsh</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mac/">mac</a></li></ul>
-    </div>
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/hexo/" class="archive-article-date">
-      <time datetime="2019-09-06T16:15:43.249Z" itemprop="datePublished">09-07</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/hexo/">Hexo</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-
-          
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-
-
+        
+        <div id="gitalk-container"></div>
         
       </div>
       <footer id="footer">
