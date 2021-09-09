@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<head><meta name="generator" content="Hexo 3.9.0">
+  
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="author" content="halapro.liu">
+
+  
+  <meta name="baidu-site-verification" content="c3eiVbsijD">
+  
+  
+  <meta name="baidu-site-verification" content="XV5dMUCplX">
+  
+  
+    <meta name="baidu-site-verification" content="LwdwHVqlVm">
+    
+  
+  <meta name="google-site-verification" content="e3G9RAX4RlFQRxsKCcLH-wG2XwuAWIRGJDz5fASHmJY">
+  
+  
+  <meta name="google-site-verification" content="Xc5nXsYqiW_CPitgBqG82UwV24LmXwWKaZO4t3c5VLQ">
+  
+
+  <meta name="description" content="俗话说，工欲善其事，必先利其器。作为一个开发人员，一个好的开发工具是coding体验的基础。">
+<meta name="keywords" content="mac">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mac打造个人开发环境-vscode篇">
+<meta property="og:url" content="https://halaproliu.github.io/vscode/index.html">
+<meta property="og:site_name" content="halapro.liu&#39;s blog">
+<meta property="og:description" content="俗话说，工欲善其事，必先利其器。作为一个开发人员，一个好的开发工具是coding体验的基础。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2021-09-09T04:20:50.315Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Mac打造个人开发环境-vscode篇">
+<meta name="twitter:description" content="俗话说，工欲善其事，必先利其器。作为一个开发人员，一个好的开发工具是coding体验的基础。">
+
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  
+  <link rel="alternate" href="/atom.xml" title="halapro.liu&#39;s blog" type="application/atom+xml">
+  
+
+  
+  <link rel="shortcut icon" href="/favicon.png">
+  
+
+  
+  <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+  
+
+  
+  <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+  
+
+  
+  <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+  <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+  
+
+  <link rel="stylesheet" href="/css/style.css">
+
+  
+
+  <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+  
+
+  
+  <title>Mac打造个人开发环境-vscode篇 | halapro.liu&#39;s blog</title>
+
+  <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+  <script>
+    var yiliaConfig = {
+      fancybox: true,
+      animate: true,
+      isHome: false,
+      isPost: true,
+        isArchive: false,
+          isTag: false,
+            isCategory: false,
+              fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+                scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+                  search: false
+    }
+  </script>
+
+  
+  <script> yiliaConfig.jquery_ui = [false]; </script>
+  
+
+  
+  <script> yiliaConfig.rootUrl = "\/";</script>
+  
+
+  
+
+  
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?1eee1f68382ffb9e76f67c57e6c0603d";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+  
+
+  
+
+</head>
+</html>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/avatar.jpg" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">halapro.liu</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">三分钟热度工程师</p>
+        
+
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:hf120430790@163.com" title="Email"></a>
+                            
+                                <a class="fa 新浪微博" href="https://weibo.com/502575344/home?wvr=5" title="新浪微博"></a>
+                            
+                                <a class="fa GitHub" href="https://github.com/halaproliu" title="GitHub"></a>
+                            
+                                <a class="fa RSS" href="/atom.xml" title="RSS"></a>
+                            
+                                <a class="fa 知乎" href="https://www.zhihu.com/people/halapro.liu/activities" title="知乎"></a>
+                            
+                                <a class="fa 简书" href="https://www.jianshu.com/u/fdf0c90358ac" title="简书"></a>
+                            
+                                <a class="fa 掘金" href="https://juejin.im/user/59f8378f6fb9a045263ae315" title="掘金"></a>
+                            
+                                <a class="fa Gitbook" href="https://halaproliu.github.io/gitbook/" title="Gitbook"></a>
+                            
+                                <a class="fa 网易云音乐" href="https://music.163.com/#/user/home?id=115810447" title="网易云音乐"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac/">Mac</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gittalk/">gittalk</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jekkins-centos-centos8/">jekkins,centos,centos8</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mac/">mac</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tiktok-ios/">tiktok ios</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/代码屏幕截图/">代码屏幕截图</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">专注于前端</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">halapro.liu</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/avatar.jpg" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">halapro.liu</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">三分钟热度工程师</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:hf120430790@163.com" title="Email"></a>
+                            
+                                <a class="fa 新浪微博" target="_blank" href="https://weibo.com/502575344/home?wvr=5" title="新浪微博"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="https://github.com/halaproliu" title="GitHub"></a>
+                            
+                                <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
+                            
+                                <a class="fa 知乎" target="_blank" href="https://www.zhihu.com/people/halapro.liu/activities" title="知乎"></a>
+                            
+                                <a class="fa 简书" target="_blank" href="https://www.jianshu.com/u/fdf0c90358ac" title="简书"></a>
+                            
+                                <a class="fa 掘金" target="_blank" href="https://juejin.im/user/59f8378f6fb9a045263ae315" title="掘金"></a>
+                            
+                                <a class="fa Gitbook" target="_blank" href="https://halaproliu.github.io/gitbook/" title="Gitbook"></a>
+                            
+                                <a class="fa 网易云音乐" target="_blank" href="https://music.163.com/#/user/home?id=115810447" title="网易云音乐"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap">
+        <article id="post-vscode" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/vscode/" class="article-date">
+      <time datetime="2019-09-08T12:55:43.000Z" itemprop="datePublished">2019-09-08</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Mac打造个人开发环境-vscode篇
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mac/">mac</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h3>前言</h3>
+<p>俗话说，工欲善其事，必先利其器。作为一个开发人员，一个好的开发工具是coding体验的基础。今天就来介绍一下一些vscode好用的插件，至于vscode是什么，就不用我说了吧，巨硬大法好。</p>
+<h5>Auto Close Tag</h5>
+<p>这款插件能够自动添加html或xml标签的结束标签，提升开发效率有没有。</p>
+<h5>Auto Import</h5>
+<p>前端工程化进行到今天，模块化开发已经是非常普及了。Auto Import提供自动模块引入提示，省心又省力，减少编写路径的时间，想想都觉得美妙。</p>
+<h5>Auto Rename Tag</h5>
+<p>当需要修改html或xml标签时，起始和结尾各改一次，多麻烦啊，万一标签的子节点很多，还要拖动去寻找结束标签，这款插件省去了不少时间。</p>
+<h5>Bracket Pair Colorizer</h5>
+<p>相对应的大括号变成相同的颜色，轻松的知道代码代码结构</p>
+<h5>Document this</h5>
+<p>自动生成注释，方便后续review代码。</p>
+<h5>GitLens</h5>
+<p>让你拥有在vscode查看git提交记录，对比记录，提交，pull代码等各种git常用操作。</p>
+<h5>indent-rainbow</h5>
+<p>添加缩进的颜色块，让代码缩进更加直观。</p>
+<h5>Markdown Preview Enhanced</h5>
+<p>预览markdown的功能，让vscode编写markdown更简单</p>
+<h5>Path Intellisense</h5>
+<p>自动路径补全，不用再去翻目录结构了</p>
+<h5>Project Manager</h5>
+<p>项目管理工具，可以方便的配置多个工程到命令行中，快速选取指定工程</p>
+<h5>view-in-browser</h5>
+<p>在vscode中，右键打开浏览器，不用去浏览器输入文件路径，也不用直接去找文件打开了。</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/vscode/">Mac打造个人开发环境-vscode篇</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">halapro.liu</a></p>
+        <p><span>发布时间:</span>2019-09-08, 20:55:43</p>
+        <p><span>最后更新:</span>2021-09-09, 12:20:50</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/vscode/" title="Mac打造个人开发环境-vscode篇">https://halaproliu.github.io/vscode/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://halaproliu.github.io/vscode/　　作者: halapro.liu" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/gittalk/">
+                    个人博客评论插件之gittalk
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/iterm2zsh/">
+                    Mac终端神器iterm2和zsh
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#null"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#null"><span class="toc-number">1.0.1.</span> <span class="toc-text">Auto Close Tag</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#null"><span class="toc-number">1.0.2.</span> <span class="toc-text">Auto Import</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#null"><span class="toc-number">1.0.3.</span> <span class="toc-text">Auto Rename Tag</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#null"><span class="toc-number">1.0.4.</span> <span class="toc-text">Bracket Pair Colorizer</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#null"><span class="toc-number">1.0.5.</span> <span class="toc-text">Document this</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#null"><span class="toc-number">1.0.6.</span> <span class="toc-text">GitLens</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#null"><span class="toc-number">1.0.7.</span> <span class="toc-text">indent-rainbow</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#null"><span class="toc-number">1.0.8.</span> <span class="toc-text">Markdown Preview Enhanced</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#null"><span class="toc-number">1.0.9.</span> <span class="toc-text">Path Intellisense</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#null"><span class="toc-number">1.0.10.</span> <span class="toc-text">Project Manager</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#null"><span class="toc-number">1.0.11.</span> <span class="toc-text">view-in-browser</span></a></li></ol></li></ol></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"Mac打造个人开发环境-vscode篇　| halapro.liu's blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+        <section id="comments">
+    <style> aside.comment-bar { margin: auto 30px; }</style>
+    <div id="disqus_thread"></div>
+    <script>
+        var disqus_config = function(){
+            this.page.url = 'https://halaproliu.github.io/vscode/';
+            this.page.identifier = 'vscode/';
+        };
+        var loadComment = function(){
+            var d = document, s = d.createElement('script');
+            s.src = '//halaproliu.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        }
+    </script>
+    
+    <script> loadComment(); </script>
+
+</section>
+
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/gittalk/" title="上一篇: 个人博客评论插件之gittalk">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/iterm2zsh/" title="下一篇: Mac终端神器iterm2和zsh">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/tiktok/">苹果IOS手机使用 Shadowsocks 设置教程及抖音国际版tiktok免拔卡使用教程</a></li><li class="post-list-item"><a class="post-list-link" href="/hexo/">Hexo</a></li><li class="post-list-item"><a class="post-list-link" href="/jekkins/">如何在 CentOS 8 上安装Jenkins</a></li><li class="post-list-item"><a class="post-list-link" href="/screenCapture/">非常好看的屏幕截图工具Carbon和polacode</a></li><li class="post-list-item"><a class="post-list-link" href="/macFtp/">Mac安装FTP终端工具</a></li><li class="post-list-item"><a class="post-list-link" href="/proxies/">Mac使用shadowsocks配合Proxies接收gmail</a></li><li class="post-list-item"><a class="post-list-link" href="/gittalk/">个人博客评论插件之gittalk</a></li><li class="post-list-item"><a class="post-list-link" href="/vscode/">Mac打造个人开发环境-vscode篇</a></li><li class="post-list-item"><a class="post-list-link" href="/iterm2zsh/">Mac终端神器iterm2和zsh</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+
+        
+        <div id="gitalk-container"></div>
+        
+      </div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2016-2021 halapro.liu
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script
+  data-main="/js/main.js"
+  src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"
+></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+ 
+
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-V5X6N8LG8R"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+
+  gtag('config', 'G-V5X6N8LG8R');
+</script>
+
+ 
+<script>
+  ;(function() {
+    var bp = document.createElement('script')
+    var curProtocol = window.location.protocol.split(':')[0]
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js'
+    }
+    var s = document.getElementsByTagName('script')[0]
+    s.parentNode.insertBefore(bp, s)
+  })()
+</script>
+
+  <div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div> <script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script> 
+<script
+  async
+  src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"
+></script>
+
+  </div>
+</body>
+</html>

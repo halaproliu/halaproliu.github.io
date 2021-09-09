@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<head><meta name="generator" content="Hexo 3.9.0">
+  
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="author" content="halapro.liu">
+
+  
+  <meta name="baidu-site-verification" content="c3eiVbsijD">
+  
+  
+  <meta name="baidu-site-verification" content="XV5dMUCplX">
+  
+  
+    <meta name="baidu-site-verification" content="LwdwHVqlVm">
+    
+  
+  <meta name="google-site-verification" content="e3G9RAX4RlFQRxsKCcLH-wG2XwuAWIRGJDz5fASHmJY">
+  
+  
+  <meta name="google-site-verification" content="Xc5nXsYqiW_CPitgBqG82UwV24LmXwWKaZO4t3c5VLQ">
+  
+
+  <meta name="description" content="一个非常好用的第三方评论插件，可以同时在gitbook和hexo搭建的博客上使用">
+<meta name="keywords" content="gittalk">
+<meta property="og:type" content="article">
+<meta property="og:title" content="个人博客评论插件之gittalk">
+<meta property="og:url" content="https://halaproliu.github.io/gittalk/index.html">
+<meta property="og:site_name" content="halapro.liu&#39;s blog">
+<meta property="og:description" content="一个非常好用的第三方评论插件，可以同时在gitbook和hexo搭建的博客上使用">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://halaproliu.github.io/images/gittalk1.jpg">
+<meta property="og:image" content="https://halaproliu.github.io/images/gittalk2.jpg">
+<meta property="og:image" content="https://halaproliu.github.io/images/gittalk3.jpg">
+<meta property="og:image" content="https://halaproliu.github.io/images/gittalk4.jpg">
+<meta property="og:image" content="https://halaproliu.github.io/images/gittalk5.jpg">
+<meta property="og:image" content="https://halaproliu.github.io/images/gittalk7.jpg">
+<meta property="og:updated_time" content="2021-09-09T04:20:50.315Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="个人博客评论插件之gittalk">
+<meta name="twitter:description" content="一个非常好用的第三方评论插件，可以同时在gitbook和hexo搭建的博客上使用">
+<meta name="twitter:image" content="https://halaproliu.github.io/images/gittalk1.jpg">
+
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  
+  <link rel="alternate" href="/atom.xml" title="halapro.liu&#39;s blog" type="application/atom+xml">
+  
+
+  
+  <link rel="shortcut icon" href="/favicon.png">
+  
+
+  
+  <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+  
+
+  
+  <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+  
+
+  
+  <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+  <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+  
+
+  <link rel="stylesheet" href="/css/style.css">
+
+  
+
+  <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+  
+
+  
+  <title>个人博客评论插件之gittalk | halapro.liu&#39;s blog</title>
+
+  <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+  <script>
+    var yiliaConfig = {
+      fancybox: true,
+      animate: true,
+      isHome: false,
+      isPost: true,
+        isArchive: false,
+          isTag: false,
+            isCategory: false,
+              fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+                scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+                  search: false
+    }
+  </script>
+
+  
+  <script> yiliaConfig.jquery_ui = [false]; </script>
+  
+
+  
+  <script> yiliaConfig.rootUrl = "\/";</script>
+  
+
+  
+
+  
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?1eee1f68382ffb9e76f67c57e6c0603d";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+  
+
+  
+
+</head>
+</html>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/avatar.jpg" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">halapro.liu</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">三分钟热度工程师</p>
+        
+
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:hf120430790@163.com" title="Email"></a>
+                            
+                                <a class="fa 新浪微博" href="https://weibo.com/502575344/home?wvr=5" title="新浪微博"></a>
+                            
+                                <a class="fa GitHub" href="https://github.com/halaproliu" title="GitHub"></a>
+                            
+                                <a class="fa RSS" href="/atom.xml" title="RSS"></a>
+                            
+                                <a class="fa 知乎" href="https://www.zhihu.com/people/halapro.liu/activities" title="知乎"></a>
+                            
+                                <a class="fa 简书" href="https://www.jianshu.com/u/fdf0c90358ac" title="简书"></a>
+                            
+                                <a class="fa 掘金" href="https://juejin.im/user/59f8378f6fb9a045263ae315" title="掘金"></a>
+                            
+                                <a class="fa Gitbook" href="https://halaproliu.github.io/gitbook/" title="Gitbook"></a>
+                            
+                                <a class="fa 网易云音乐" href="https://music.163.com/#/user/home?id=115810447" title="网易云音乐"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac/">Mac</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gittalk/">gittalk</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jekkins-centos-centos8/">jekkins,centos,centos8</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mac/">mac</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tiktok-ios/">tiktok ios</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/代码屏幕截图/">代码屏幕截图</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">专注于前端</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">halapro.liu</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/avatar.jpg" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">halapro.liu</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">三分钟热度工程师</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:hf120430790@163.com" title="Email"></a>
+                            
+                                <a class="fa 新浪微博" target="_blank" href="https://weibo.com/502575344/home?wvr=5" title="新浪微博"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="https://github.com/halaproliu" title="GitHub"></a>
+                            
+                                <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
+                            
+                                <a class="fa 知乎" target="_blank" href="https://www.zhihu.com/people/halapro.liu/activities" title="知乎"></a>
+                            
+                                <a class="fa 简书" target="_blank" href="https://www.jianshu.com/u/fdf0c90358ac" title="简书"></a>
+                            
+                                <a class="fa 掘金" target="_blank" href="https://juejin.im/user/59f8378f6fb9a045263ae315" title="掘金"></a>
+                            
+                                <a class="fa Gitbook" target="_blank" href="https://halaproliu.github.io/gitbook/" title="Gitbook"></a>
+                            
+                                <a class="fa 网易云音乐" target="_blank" href="https://music.163.com/#/user/home?id=115810447" title="网易云音乐"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap">
+        <article id="post-gittalk" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/gittalk/" class="article-date">
+      <time datetime="2019-09-10T04:37:52.000Z" itemprop="datePublished">2019-09-10</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      个人博客评论插件之gittalk
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/gittalk/">gittalk</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h3>前言</h3>
+<p>之前一直在掘金和简书上发技术文章，由于查询起来不太方便，于是便想自己搭建一个博客。由于使用的是hexo搭建的博客，开发一个自己的评论系统有些费劲，于是便想着找找有什么第三方的评论插件。主要看中的有两个，一个是disqus，还有一个是gittalk。鉴于disqus被墙了，需要科学上网才能使用，只能pass了。</p>
+<h5>gittalk如何集成呢？</h5>
+<ol>
+<li>首先，需要去github创建一个仓库用于存放评论功能。鉴于我的博客本身就是使用github pages搭建的，所以这部可以省略。</li>
+<li>打开github仓库的issues功能
+<img src="../../../../images/gittalk1.jpg" alt>
+<img src="../../../../images/gittalk2.jpg" alt></li>
+<li>注册一个<a href="https://github.com/settings/developers" target="_blank" rel="noopener">Github Application</a>
+<img src="../../../../images/gittalk3.jpg" alt></li>
+</ol>
+<ul>
+<li>Application name: 可以随便写</li>
+<li>Homepage URL：就是博客的网址</li>
+<li>Authorization callback URL: 就是github权限验证的回调地址，一般默认就是域名</li>
+</ul>
+<ol start="4">
+<li>创建成功后，就可以获取到Client ID和Client Secret了,保存下来。
+<img src="../../../../images/gittalk4.jpg" alt></li>
+<li>在博客里集成gittalk
+集成的方式呢，有两种：</li>
+</ol>
+<ul>
+<li>链接方式</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel=<span class="string">"stylesheet"</span> href=<span class="string">"https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css"</span>&gt;</span><br><span class="line">&lt;script src=<span class="string">"https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"</span>&gt;&lt;/script&gt; </span><br><span class="line"> </span><br><span class="line">&lt;!-- or --&gt;</span><br><span class="line"> </span><br><span class="line">&lt;link rel=<span class="string">"stylesheet"</span> href=<span class="string">"https://unpkg.com/gitalk/dist/gitalk.css"</span>&gt;</span><br><span class="line">&lt;script src=<span class="string">"https://unpkg.com/gitalk/dist/gitalk.min.js"</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>npm install</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i --save gitalk</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">'gitalk/dist/gitalk.css'</span></span><br><span class="line"><span class="keyword">import</span> Gitalk <span class="keyword">from</span> <span class="string">'gitalk'</span></span><br></pre></td></tr></table></figure>
+<p>然后在dom里，添加</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"gitalk-container"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>接着使用下面的语句初始化gittalk：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> gitalk = <span class="keyword">new</span> Gitalk(&#123;</span><br><span class="line">  clientID: <span class="string">'GitHub Application Client ID'</span>,</span><br><span class="line">  clientSecret: <span class="string">'GitHub Application Client Secret'</span>,</span><br><span class="line">  repo: <span class="string">'GitHub repo'</span>,</span><br><span class="line">  owner: <span class="string">'GitHub repo owner'</span>,</span><br><span class="line">  admin: [<span class="string">'GitHub repo owner and collaborators, only these guys can initialize github issues'</span>],</span><br><span class="line">  id: location.pathname,      <span class="comment">// Ensure uniqueness and length less than 50</span></span><br><span class="line">  distractionFreeMode: <span class="literal">false</span>  <span class="comment">// Facebook-like distraction free mode</span></span><br><span class="line">&#125;)</span><br><span class="line"> </span><br><span class="line">gitalk.render(<span class="string">'gitalk-container'</span>)</span><br></pre></td></tr></table></figure>
+<p>常见的参数就是以上这些，更多的参数，查看<a href="https://gitalk.github.io/" target="_blank" rel="noopener">gitalk</a></p>
+<h5>遇到的问题</h5>
+<p>在使用过程中，gittalk会出现Validation failed的错误。
+原因是id参数不能超过50个字符，但是gittalk的id会自动添加文章名，由于我的url都包含较长的中文，所以出现了这个错误。
+解决方法：使用md5加密location.href,传入id参数</p>
+<h5>gitbook集成gittalk</h5>
+<p>由于没有找到现成的插件，所以，我写了个新的插件。</p>
+<p><img src="../../../../images/gittalk5.jpg" alt></p>
+<p>使用方法:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 注意gittalk，最好放在插件的最后一位</span></span><br><span class="line"><span class="string">"plugins"</span>: [</span><br><span class="line">  <span class="string">"gittalk"</span></span><br><span class="line">],</span><br><span class="line"><span class="string">"pluginConfig"</span>: &#123;</span><br><span class="line">  <span class="string">"gittalk"</span>: &#123;</span><br><span class="line">    clientID: <span class="string">'GitHub Application Client ID'</span>,</span><br><span class="line">    clientSecret: <span class="string">'GitHub Application Client Secret'</span>,</span><br><span class="line">    repo: <span class="string">'GitHub repo'</span>,</span><br><span class="line">    owner: <span class="string">'GitHub repo owner'</span>,</span><br><span class="line">    admin: [<span class="string">'GitHub repo owner and collaborators, only these guys can initialize github issues'</span>],</span><br><span class="line">    distractionFreeMode: <span class="literal">false</span>  <span class="comment">// Facebook-like distraction free mode</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>接着执行以下指令安装即可：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gitbook install</span><br></pre></td></tr></table></figure>
+<h5>效果图</h5>
+<p><img src="../../../../images/gittalk7.jpg" alt></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/gittalk/">个人博客评论插件之gittalk</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">halapro.liu</a></p>
+        <p><span>发布时间:</span>2019-09-10, 12:37:52</p>
+        <p><span>最后更新:</span>2021-09-09, 12:20:50</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/gittalk/" title="个人博客评论插件之gittalk">https://halaproliu.github.io/gittalk/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://halaproliu.github.io/gittalk/　　作者: halapro.liu" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/proxies/">
+                    Mac使用shadowsocks配合Proxies接收gmail
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/vscode/">
+                    Mac打造个人开发环境-vscode篇
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#null"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#null"><span class="toc-number">1.0.1.</span> <span class="toc-text">gittalk如何集成呢？</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#null"><span class="toc-number">1.0.2.</span> <span class="toc-text">遇到的问题</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#null"><span class="toc-number">1.0.3.</span> <span class="toc-text">gitbook集成gittalk</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#null"><span class="toc-number">1.0.4.</span> <span class="toc-text">效果图</span></a></li></ol></li></ol></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"个人博客评论插件之gittalk　| halapro.liu's blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+        <section id="comments">
+    <style> aside.comment-bar { margin: auto 30px; }</style>
+    <div id="disqus_thread"></div>
+    <script>
+        var disqus_config = function(){
+            this.page.url = 'https://halaproliu.github.io/gittalk/';
+            this.page.identifier = 'gittalk/';
+        };
+        var loadComment = function(){
+            var d = document, s = d.createElement('script');
+            s.src = '//halaproliu.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        }
+    </script>
+    
+    <script> loadComment(); </script>
+
+</section>
+
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/proxies/" title="上一篇: Mac使用shadowsocks配合Proxies接收gmail">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/vscode/" title="下一篇: Mac打造个人开发环境-vscode篇">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/tiktok/">苹果IOS手机使用 Shadowsocks 设置教程及抖音国际版tiktok免拔卡使用教程</a></li><li class="post-list-item"><a class="post-list-link" href="/hexo/">Hexo</a></li><li class="post-list-item"><a class="post-list-link" href="/jekkins/">如何在 CentOS 8 上安装Jenkins</a></li><li class="post-list-item"><a class="post-list-link" href="/screenCapture/">非常好看的屏幕截图工具Carbon和polacode</a></li><li class="post-list-item"><a class="post-list-link" href="/macFtp/">Mac安装FTP终端工具</a></li><li class="post-list-item"><a class="post-list-link" href="/proxies/">Mac使用shadowsocks配合Proxies接收gmail</a></li><li class="post-list-item"><a class="post-list-link" href="/gittalk/">个人博客评论插件之gittalk</a></li><li class="post-list-item"><a class="post-list-link" href="/vscode/">Mac打造个人开发环境-vscode篇</a></li><li class="post-list-item"><a class="post-list-link" href="/iterm2zsh/">Mac终端神器iterm2和zsh</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+
+        
+        <div id="gitalk-container"></div>
+        
+      </div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2016-2021 halapro.liu
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script
+  data-main="/js/main.js"
+  src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"
+></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+ 
+
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-V5X6N8LG8R"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+
+  gtag('config', 'G-V5X6N8LG8R');
+</script>
+
+ 
+<script>
+  ;(function() {
+    var bp = document.createElement('script')
+    var curProtocol = window.location.protocol.split(':')[0]
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js'
+    }
+    var s = document.getElementsByTagName('script')[0]
+    s.parentNode.insertBefore(bp, s)
+  })()
+</script>
+
+  <div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div> <script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script> 
+<script
+  async
+  src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"
+></script>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<head><meta name="generator" content="Hexo 3.9.0">
+  
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="author" content="halapro.liu">
+
+  
+  <meta name="baidu-site-verification" content="c3eiVbsijD">
+  
+  
+  <meta name="baidu-site-verification" content="XV5dMUCplX">
+  
+  
+    <meta name="baidu-site-verification" content="LwdwHVqlVm">
+    
+  
+  <meta name="google-site-verification" content="e3G9RAX4RlFQRxsKCcLH-wG2XwuAWIRGJDz5fASHmJY">
+  
+  
+  <meta name="google-site-verification" content="Xc5nXsYqiW_CPitgBqG82UwV24LmXwWKaZO4t3c5VLQ">
+  
+
+  <meta name="description" content="ios使用shadowrocket上tiktok教程">
+<meta name="keywords" content="tiktok ios">
+<meta property="og:type" content="article">
+<meta property="og:title" content="苹果IOS手机使用 Shadowsocks 设置教程及抖音国际版tiktok免拔卡使用教程">
+<meta property="og:url" content="https://halaproliu.github.io/tiktok/index.html">
+<meta property="og:site_name" content="halapro.liu&#39;s blog">
+<meta property="og:description" content="ios使用shadowrocket上tiktok教程">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2377129-d3c1c84f2649f3d0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2377129-c65ecfc9f399c111.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2377129-7d8f2ccda3d9ed83.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2377129-1eb4914318ec4d7d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2377129-9eaa94319cd3c232.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2377129-f3a377e5647ec92e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2377129-3c9cdb65e744186c.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2377129-6cea1de580994a4e.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2377129-274bf530f848fc29.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2377129-989b4785c583c3e1.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2377129-aff3aa8549d14463.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2377129-ffaac0264bbd1d37.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2377129-d5510460f8b4f787.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2377129-4a7c8ed5f21f0476.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2377129-e38f2d2d4b001ac8.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2377129-86d8283d640743d4.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2377129-cbdb1932054eb2f3.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2021-09-09T04:32:22.194Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="苹果IOS手机使用 Shadowsocks 设置教程及抖音国际版tiktok免拔卡使用教程">
+<meta name="twitter:description" content="ios使用shadowrocket上tiktok教程">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/2377129-d3c1c84f2649f3d0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  
+  <link rel="alternate" href="/atom.xml" title="halapro.liu&#39;s blog" type="application/atom+xml">
+  
+
+  
+  <link rel="shortcut icon" href="/favicon.png">
+  
+
+  
+  <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+  
+
+  
+  <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+  
+
+  
+  <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+  <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+  
+
+  <link rel="stylesheet" href="/css/style.css">
+
+  
+
+  <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+  
+
+  
+  <title>苹果IOS手机使用 Shadowsocks 设置教程及抖音国际版tiktok免拔卡使用教程 | halapro.liu&#39;s blog</title>
+
+  <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+  <script>
+    var yiliaConfig = {
+      fancybox: true,
+      animate: true,
+      isHome: false,
+      isPost: true,
+        isArchive: false,
+          isTag: false,
+            isCategory: false,
+              fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+                scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+                  search: false
+    }
+  </script>
+
+  
+  <script> yiliaConfig.jquery_ui = [false]; </script>
+  
+
+  
+  <script> yiliaConfig.rootUrl = "\/";</script>
+  
+
+  
+
+  
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?1eee1f68382ffb9e76f67c57e6c0603d";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+  
+
+  
+
+</head>
+</html>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/avatar.jpg" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">halapro.liu</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">三分钟热度工程师</p>
+        
+
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:hf120430790@163.com" title="Email"></a>
+                            
+                                <a class="fa 新浪微博" href="https://weibo.com/502575344/home?wvr=5" title="新浪微博"></a>
+                            
+                                <a class="fa GitHub" href="https://github.com/halaproliu" title="GitHub"></a>
+                            
+                                <a class="fa RSS" href="/atom.xml" title="RSS"></a>
+                            
+                                <a class="fa 知乎" href="https://www.zhihu.com/people/halapro.liu/activities" title="知乎"></a>
+                            
+                                <a class="fa 简书" href="https://www.jianshu.com/u/fdf0c90358ac" title="简书"></a>
+                            
+                                <a class="fa 掘金" href="https://juejin.im/user/59f8378f6fb9a045263ae315" title="掘金"></a>
+                            
+                                <a class="fa Gitbook" href="https://halaproliu.github.io/gitbook/" title="Gitbook"></a>
+                            
+                                <a class="fa 网易云音乐" href="https://music.163.com/#/user/home?id=115810447" title="网易云音乐"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac/">Mac</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gittalk/">gittalk</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jekkins-centos-centos8/">jekkins,centos,centos8</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mac/">mac</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tiktok-ios/">tiktok ios</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/代码屏幕截图/">代码屏幕截图</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">专注于前端</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">halapro.liu</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/avatar.jpg" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">halapro.liu</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">三分钟热度工程师</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:hf120430790@163.com" title="Email"></a>
+                            
+                                <a class="fa 新浪微博" target="_blank" href="https://weibo.com/502575344/home?wvr=5" title="新浪微博"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="https://github.com/halaproliu" title="GitHub"></a>
+                            
+                                <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
+                            
+                                <a class="fa 知乎" target="_blank" href="https://www.zhihu.com/people/halapro.liu/activities" title="知乎"></a>
+                            
+                                <a class="fa 简书" target="_blank" href="https://www.jianshu.com/u/fdf0c90358ac" title="简书"></a>
+                            
+                                <a class="fa 掘金" target="_blank" href="https://juejin.im/user/59f8378f6fb9a045263ae315" title="掘金"></a>
+                            
+                                <a class="fa Gitbook" target="_blank" href="https://halaproliu.github.io/gitbook/" title="Gitbook"></a>
+                            
+                                <a class="fa 网易云音乐" target="_blank" href="https://music.163.com/#/user/home?id=115810447" title="网易云音乐"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap">
+        <article id="post-tiktok" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/tiktok/" class="article-date">
+      <time datetime="2021-09-09T04:31:10.000Z" itemprop="datePublished">2021-09-09</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      苹果IOS手机使用 Shadowsocks 设置教程及抖音国际版tiktok免拔卡使用教程
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tiktok-ios/">tiktok ios</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>苹果IOS手机抖音国际版tiktok免拔卡使用教程
+我们都知道苹果手机想要看抖音国际版tiktok短视频，前提必须是要能科学上网，这样不仅可以看国际版抖音上的小姐姐，还能上油管、谷歌、推特等国外网站。</p>
+<p>苹果手机上国际版抖音需要达到以下3个条件：</p>
+<p>一、有一个可以上国外网站的机场节点——这里推荐使用Bywave机场，拥有ICLP专线，抗封锁能力强，安全高速稳定，所有的节点都可以看Netflix，并且还可以做为游戏加速器使用。<strong><a href="https://freebrid.top/Bywave" target="_blank" rel="noopener">&gt;&gt;点击进入Bywave官网&lt;&lt;</a></strong></p>
+<p>二、有一个美区苹果ID——可能参考**<a href="https://nice456.com/index.php/2021/02/21/apple-id/" target="_blank" rel="noopener">&gt;&gt;美国Apple ID注册方法&lt;&lt;</a>**</p>
+<p>三、苹果手机从美区苹果ID上下载小火箭Shadowrocket，安装后并进行配置。</p>
+<p>1、<strong><em>节点订阅设置</em></strong></p>
+<p>打开小火箭Shadowrocket软件，点击右上角加号 + ，在添加节点页面，将类型改为第三个 Subscribe，打开购买的机场后台，复制订阅地址粘贴到URL中，然后点击右上角完成即可。
+<img src="https://upload-images.jianshu.io/upload_images/2377129-d3c1c84f2649f3d0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/2377129-c65ecfc9f399c111.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt>
+2、启用服务
+<img src="https://upload-images.jianshu.io/upload_images/2377129-7d8f2ccda3d9ed83.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt></p>
+<p>如上图所示，添加了节点之后，主界面（“首页”）节点列表就会出现你刚才添加的节点。</p>
+<p>主界面右上角有一个开关，点那个开关连接节点；</p>
+<p>第一次连接会弹出对话框提示添加代理，点 Allow 允许，不然不能用；</p>
+<p>如果你有好几个节点，点击节点可以设为默认，每次连接都会连接默认节点，如果要连别的节点，则把别的节点设为默认；</p>
+<p>至此，你应该已经成功可以在苹果手机上打开youtube和其它国外网站了，打开浏览器试试吧</p>
+<p>3、打开小火箭，点击下方——配置——添加配置
+<img src="https://upload-images.jianshu.io/upload_images/2377129-1eb4914318ec4d7d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt>
+4、复制下面任意一个配置连接添加进去-点击下载</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">日本 https://raw.githubusercontent.com/Semporia/TikTok-Unlock/master/Shadowrocket/TiKok-JP.conf </span><br><span class="line">台湾 https://raw.githubusercontent.com/Semporia/TikTok-Unlock/master/Shadowrocket/TiKok-TW.conf </span><br><span class="line">韩国 https://raw.githubusercontent.com/Semporia/TikTok-Unlock/master/Shadowrocket/TiKok-KR.conf</span><br><span class="line">美国 https://raw.githubusercontent.com/Semporia/TikTok-Unlock/master/Shadowrocket/TiKok-US.conf</span><br></pre></td></tr></table></figure>
+<p><img src="https://upload-images.jianshu.io/upload_images/2377129-9eaa94319cd3c232.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt></p>
+<p>5、点击远程文件下面的连接，选择使用配置，这个时候会提示“无法连接服务器”的提示，</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/2377129-f3a377e5647ec92e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt></p>
+<p>这个时候我们需要选中一个节点，打开开关</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/2377129-3c9cdb65e744186c.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt></p>
+<p>在去重复上面的步骤，点击使用配置，这个时候会提示“成功”</p>
+<p>6、这个时候会出来一个配置文件，选中后点击-编辑配置</p>
+<p>[图片上传失败...(image-4de81-1627197027922)]</p>
+<p>7、找到HTTPS解密</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/2377129-6cea1de580994a4e.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p>8、打开https解密开关，在点击——生成新的CA证书——安装证书</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/2377129-274bf530f848fc29.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/2377129-989b4785c583c3e1.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p>点击允许-关闭</p>
+<p>9、打开手机设置，点击——已下载描述文件——安装</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/2377129-aff3aa8549d14463.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/2377129-ffaac0264bbd1d37.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p>安装完成后如下图</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/2377129-d5510460f8b4f787.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p>10、打开手机设置——关于本机——证书信任设置，点击进去，打开开关，点击继续，然后关闭</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/2377129-4a7c8ed5f21f0476.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p>回到小火箭，点击关闭，在点击右上角的√两次。</p>
+<p>四、从美区苹果ID里下载tiktok</p>
+<p>1、下载完成后，打开小火箭，选择配置，确保是这个配置文件</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/2377129-e38f2d2d4b001ac8.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p>2、找到全局路由选择——代理，打开上面的开关</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/2377129-86d8283d640743d4.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p>3、打开 tiktok就可以正常观看了</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/2377129-cbdb1932054eb2f3.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p>温馨提示：如果打开的是黑屏，建议更换节点或者再次看一遍教程，以免操作失误导致的。</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/tiktok/">苹果IOS手机使用 Shadowsocks 设置教程及抖音国际版tiktok免拔卡使用教程</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">halapro.liu</a></p>
+        <p><span>发布时间:</span>2021-09-09, 12:31:10</p>
+        <p><span>最后更新:</span>2021-09-09, 12:32:22</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/tiktok/" title="苹果IOS手机使用 Shadowsocks 设置教程及抖音国际版tiktok免拔卡使用教程">https://halaproliu.github.io/tiktok/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://halaproliu.github.io/tiktok/　　作者: halapro.liu" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/hexo/">
+                    Hexo
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"苹果IOS手机使用 Shadowsocks 设置教程及抖音国际版tiktok免拔卡使用教程　| halapro.liu's blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+        <section id="comments">
+    <style> aside.comment-bar { margin: auto 30px; }</style>
+    <div id="disqus_thread"></div>
+    <script>
+        var disqus_config = function(){
+            this.page.url = 'https://halaproliu.github.io/tiktok/';
+            this.page.identifier = 'tiktok/';
+        };
+        var loadComment = function(){
+            var d = document, s = d.createElement('script');
+            s.src = '//halaproliu.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        }
+    </script>
+    
+    <script> loadComment(); </script>
+
+</section>
+
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/hexo/" title="下一篇: Hexo">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/tiktok/">苹果IOS手机使用 Shadowsocks 设置教程及抖音国际版tiktok免拔卡使用教程</a></li><li class="post-list-item"><a class="post-list-link" href="/hexo/">Hexo</a></li><li class="post-list-item"><a class="post-list-link" href="/jekkins/">如何在 CentOS 8 上安装Jenkins</a></li><li class="post-list-item"><a class="post-list-link" href="/screenCapture/">非常好看的屏幕截图工具Carbon和polacode</a></li><li class="post-list-item"><a class="post-list-link" href="/macFtp/">Mac安装FTP终端工具</a></li><li class="post-list-item"><a class="post-list-link" href="/proxies/">Mac使用shadowsocks配合Proxies接收gmail</a></li><li class="post-list-item"><a class="post-list-link" href="/gittalk/">个人博客评论插件之gittalk</a></li><li class="post-list-item"><a class="post-list-link" href="/vscode/">Mac打造个人开发环境-vscode篇</a></li><li class="post-list-item"><a class="post-list-link" href="/iterm2zsh/">Mac终端神器iterm2和zsh</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+
+        
+        <div id="gitalk-container"></div>
+        
+      </div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2016-2021 halapro.liu
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script
+  data-main="/js/main.js"
+  src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"
+></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+ 
+
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-V5X6N8LG8R"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+
+  gtag('config', 'G-V5X6N8LG8R');
+</script>
+
+ 
+<script>
+  ;(function() {
+    var bp = document.createElement('script')
+    var curProtocol = window.location.protocol.split(':')[0]
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js'
+    }
+    var s = document.getElementsByTagName('script')[0]
+    s.parentNode.insertBefore(bp, s)
+  })()
+</script>
+
+  <div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div> <script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script> 
+<script
+  async
+  src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"
+></script>
+
+  </div>
+</body>
+</html>
