@@ -45,7 +45,7 @@
 <meta property="og:image" content="https://halaproliu.github.io/images/instanceConfiguration.webp">
 <meta property="og:image" content="https://halaproliu.github.io/images/jekkinsReady.webp">
 <meta property="og:image" content="https://halaproliu.github.io/images/jekkinsSuccess.webp">
-<meta property="og:updated_time" content="2021-09-09T04:20:50.315Z">
+<meta property="og:updated_time" content="2021-09-10T03:23:19.755Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="如何在 CentOS 8 上安装Jenkins">
 <meta name="twitter:description" content="如何在 CentOS 8 上安装Jenkins">
@@ -385,6 +385,8 @@
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Loaded: loaded (<span class="regexp">/etc/</span>rc.d/init.d/jenkins; generated)</span><br><span class="line">Active: active (running) since Thu <span class="number">2019</span><span class="number">-11</span><span class="number">-05</span> <span class="number">21</span>:<span class="number">31</span>:<span class="number">36</span> UTC; <span class="number">3</span>s ago</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
 <h3>配置防火墙</h3>
 <p>如果要在受防火墙保护的远程CentOS服务器上安装Jenkins，则需要开放8080端口。</p>
+<p>也可通过修改jekkins配置，修改端口号</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/sysconfig/jenkins</span><br></pre></td></tr></table></figure>
 <p>使用以下命令打开必要的端口：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo firewall-cmd --permanent --zone=public --add-port=<span class="number">8080</span>/tcp</span><br><span class="line">sudo firewall-cmd --reload</span><br></pre></td></tr></table></figure>
 <h3>设置Jenkins</h3>
@@ -420,7 +422,7 @@
         <p><span>本文标题:</span><a href="/jekkins/">如何在 CentOS 8 上安装Jenkins</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">halapro.liu</a></p>
         <p><span>发布时间:</span>2020-05-16, 18:53:23</p>
-        <p><span>最后更新:</span>2021-09-09, 12:20:50</p>
+        <p><span>最后更新:</span>2021-09-10, 11:23:19</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/jekkins/" title="如何在 CentOS 8 上安装Jenkins">https://halaproliu.github.io/jekkins/</a>
             <span class="copy-path" data-clipboard-text="原文: https://halaproliu.github.io/jekkins/　　作者: halapro.liu" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
